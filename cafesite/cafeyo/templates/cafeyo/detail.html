@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cafeyo - 경북대 카페 프로그램</title>
+  </head>
+  <body>
+    <h1>{{ gate.문이름 }}</h1>
+    {% csrf_token %} {% for cafe in gate.cafe_set.all %}
+    <li>
+      {{ cafe.카페명 }} {{ cafe.전화번호 }}
+    </li>
+    {% endfor %}
+  </body>
+</html>
