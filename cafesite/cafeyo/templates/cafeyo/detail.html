@@ -3,13 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cafeyo - 경북대 카페 프로그램</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      text="text/css"
+      href="{% static 'cafeyo/styles.css' %}"
+    />
   </head>
   <body>
+    <div class="header">
+      <div class="header__logo">
+        <a href="{% url 'cafeyo:index' %}">
+          카페요(로고 만들어서 이미지 넣기)
+        </a>
+      </div>
+    </div>
     <h1>{{ gate.문이름 }}</h1>
     {% csrf_token %} {% for cafe in gate.cafe_set.all %}
-    <li>
-      {{ cafe.카페명 }} {{ cafe.전화번호 }}
-    </li>
+    <div class="detail__list">
+      <a href="{% url 'cafeyo:results' cafe.id %}">
+        <h3>{{ cafe.카페명 }}</h3>
+        <h6>전화번호: {{ cafe.전화번호 }}</h6>
+        <h6>주소: {{ cafe.주소 }}</h6>
+        <h6>영업시간: {{ cafe.영업시간 }}</h6>
+        <h6>카테고리: {{ cafe.카테고리 }}</h6>
+      </a>
+    </div>
     {% endfor %}
   </body>
 </html>

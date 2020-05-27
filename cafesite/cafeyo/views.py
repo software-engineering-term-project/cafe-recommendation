@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 
-from .models import Cafe, Gate
+from .models import Gate, Cafe, Category, Menu
 
 # Create your views here.
 

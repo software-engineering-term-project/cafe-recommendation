@@ -3,14 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cafeyo - 경북대 카페 프로그램</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      text="text/css"
+      href="{% static 'cafeyo/styles.css' %}"
+    />
   </head>
   <body>
+    <div class="header">
+      이부분은 헤더
+      <div class="header__logo">
+        <a href="{% url 'cafeyo:index' %}">
+          카페요(로고 만들어서 이미지 넣기)
+        </a>
+      </div>
+    </div>
     {% if gate_list %}
     <ul>
       {% for gate in gate_list %}
       <li>
         <a href="{% url 'cafeyo:detail' gate.id %}">
-          {{ gate.문이름 }}
+          <div class="gate__button">
+            {{ gate.문이름 }}
+            <p>문 버튼 이미지 만들어 넣기</p>
+          </div>
         </a>
       </li>
       {% endfor %}

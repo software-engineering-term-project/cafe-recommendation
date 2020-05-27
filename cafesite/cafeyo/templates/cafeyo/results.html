@@ -3,8 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cafeyo - 경북대 카페 프로그램</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      text="text/css"
+      href="{% static 'cafeyo/styles.css' %}"
+    />
   </head>
   <body>
-    <p>this is results page</p>
+    <div class="header">
+      <div class="header__logo">
+        <a href="{% url 'cafeyo:index' %}">
+          카페요(로고 만들어서 이미지 넣기)
+        </a>
+      </div>
+    </div>
+    {% csrf_token %}
+    <h1>{{ cafe.카페명 }}</h1>
+    <div class="result__cafe">
+      <h3>{{ cafe.카페명 }}</h3>
+      <h6>전화번호: {{ cafe.전화번호 }}</h6>
+      <h6>주소: {{ cafe.주소 }}</h6>
+      <h6>영업시간: {{ cafe.영업시간 }}</h6>
+      <h6>카테고리: {{ cafe.카테고리 }}</h6>
+    </div>
+    {% for menu in cafe.menu_set.all %}
+    <div class="result__menu">
+      <h6>이름: {{ menu.이름 }} / 가격: {{ menu.가격 }}</h6>
+    </div>
+    {% endfor %}
   </body>
 </html>
