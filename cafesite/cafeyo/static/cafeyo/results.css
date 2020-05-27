@@ -1,0 +1,11 @@
+.result__cafe {
+  width: 50%;
+  height: 300px;
+  border-bottom: 1px solid black;
+}
+
+.result__menu {
+  width: 50%;
+  height: 300px;
+  border-bottom: 1px solid black;
+}
