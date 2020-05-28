@@ -1,0 +1,6 @@
+﻿오늘 할 일
+배홍직 python 공부/ html, Css 공부
+이채현 html Css 공부
+김경주 DB작성
+이현준 Flask 기초 공부
+
