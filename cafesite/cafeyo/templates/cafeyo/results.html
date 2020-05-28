@@ -27,10 +27,17 @@
       <h6>영업시간: {{ cafe.영업시간 }}</h6>
       <h6>카테고리: {{ cafe.카테고리 }}</h6>
     </div>
-    {% for menu in cafe.menu_set.all %}
     <div class="result__menu">
-      <h6>이름: {{ menu.이름 }} / 가격: {{ menu.가격 }}</h6>
+      <ul>
+        {% for menu in cafe.menu_set.all %}
+        <li>
+          <h6>이름: {{ menu.이름 }} / 가격: {{ menu.가격 }}</h6>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-    {% endfor %}
+    <div class="result_random">
+      랜덤결과---{{ random_menu.이름 }} / {{ random_menu.가격 }}
+    </div>
   </body>
 </html>
