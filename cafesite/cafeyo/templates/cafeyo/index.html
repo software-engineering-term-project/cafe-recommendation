@@ -19,23 +19,25 @@
         </a>
       </div>
     </div>
-    {% if gate_list %}
-    <ul>
-      <div class="gate">
-        {% for gate in gate_list %}
-        <li>
-          <a href="{% url 'cafeyo:detail' gate.id %}">
-            <div class="gate__button">
-              {{ gate.문이름 }}
-              <p>문 버튼 이미지 만들어 넣기</p>
-            </div>
-          </a>
-        </li>
-        {% endfor %}
+    <a href="{% url 'cafeyo:cafelist' gate_id='1' %}">
+      <div class="gate__button">
+        북문테스트버튼
       </div>
-    </ul>
-    {% else %}
-    <p>No gate...</p>
-    {% endif %}
+    </a>
+    <a href="{% url 'cafeyo:cafelist' gate_id='2' %}">
+      <div class="gate__button">
+        테스트버튼
+      </div>
+    </a>
+    <a href="{% url 'cafeyo:cafelist' gate_id='3' %}">
+      <div class="gate__button">
+        테스트버튼
+      </div>
+    </a>
+    <a href="{% url 'cafeyo:cafelist' gate_id='4' %}">
+      <div class="gate__button">
+        테스트버튼
+      </div>
+    </a>
   </body>
 </html>

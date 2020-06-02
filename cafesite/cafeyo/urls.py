@@ -6,8 +6,11 @@ app_name = 'cafeyo'
 urlpatterns = [
     # ex: /cafeyo/
     path('', views.IndexView.as_view(), name='index'),
-    # ex: /cafeyo/1/
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    # ex: /cafeyo/1/results/
-    path('<int:pk>/results/', views.ResultsView.as_view(), name='results')
+    # ex: /cafeyo/list/1/
+    path('list/<int:gate_id>/', views.CafelistView.as_view(), name='cafelist'),
+    # ex: /cafeyo//list/1/category/3/
+    path('list/<int:gate_id>/category/<category_id>/',
+         views.CafelistView.as_view(), name='cafelist_category'),
+    # ex: /cafeyo/results/1/
+    path('results/<int:pk>/', views.ResultsView.as_view(), name='results')
 ]
