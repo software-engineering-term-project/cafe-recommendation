@@ -23,7 +23,7 @@
     <div>
       <div>추천카페: {{ random_cafe.카페명 }}</div>
     </div>
-    {% for cafe in gate.cafe_set.all %}
+    {% for cafe in cafe_list %}
     <div class="detail__list">
       <a href="{% url 'cafeyo:results' cafe.id %}">
         <h3>{{ cafe.카페명 }}</h3>

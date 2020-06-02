@@ -9,3 +9,8 @@
   height: 300px;
   border-bottom: 1px solid black;
 }
+
+.result__map {
+  width: 500px;
+  height: 400px;
+}

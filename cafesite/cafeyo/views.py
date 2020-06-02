@@ -11,44 +11,57 @@ from .models import Gate, Cafe, Category, Menu
 # Create your views here.
 
 
-class IndexView(generic.ListView):
-    model = Gate
+class IndexView(generic.TemplateView):
     template_name = 'cafeyo/index.html'
-    context_object_name = 'gate_list'
+
+
+class CafelistView(generic.ListView):
+    model = Cafe
+    template_name = 'cafeyo/cafe_list.html'
+    context_object_name = 'cafe_list'
 
     def get_queryset(self):
-        return Gate.objects.order_by('id')
-
-
-class DetailView(generic.DetailView):
-    model = Gate
-    template_name = 'cafeyo/detail.html'
+        if 'category_id' in self.kwargs:
+            return Cafe.objects.filter(문=self.kwargs['gate_id'], 카테고리=self.kwargs['category_id'])
+        else:
+            return Cafe.objects.filter(문=self.kwargs['gate_id'])
 
     def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
-        max_id = Cafe.objects.all().aggregate(max_id=Max('id'))['max_id']
-        while True:
-            pk = random.randint(1, max_id)
-            context['random_cafe'] = Cafe.objects.filter(pk=pk).first()
-            if context['random_cafe']:
-                return context
+        if 'category_id' in self.kwargs:
+            if Cafe.objects.filter(문=self.kwargs['gate_id'], 카테고리=self.kwargs['category_id']).exists():
+                context = super(CafelistView, self).get_context_data(**kwargs)
+                max_id = Cafe.objects.all().aggregate(
+                    max_id=Max('id'))['max_id']
+                while True:
+                    rand = random.randint(1, max_id)
+                    context['random_cafe'] = Cafe.objects.filter(
+                        문=self.kwargs['gate_id'], 카테고리=self.kwargs['category_id'], pk=rand).first()
+                    if context['random_cafe']:
+                        return context
+        else:
+            if Cafe.objects.filter(문=self.kwargs['gate_id']).exists():
+                context = super(CafelistView, self).get_context_data(**kwargs)
+                max_id = Cafe.objects.all().aggregate(
+                    max_id=Max('id'))['max_id']
+                while True:
+                    rand = random.randint(1, max_id)
+                    context['random_cafe'] = Cafe.objects.filter(
+                        문=self.kwargs['gate_id'], pk=rand).first()
+                    if context['random_cafe']:
+                        return context
 
 
 class ResultsView(generic.DetailView):
     model = Cafe
     template_name = 'cafeyo/results.html'
 
-    # random menu pick v.2
     def get_context_data(self, **kwargs):
-        context = super(ResultsView, self).get_context_data(**kwargs)
-        max_id = Menu.objects.all().aggregate(max_id=Max('id'))['max_id']
-        while True:
-            pk = random.randint(1, max_id)
-            context['random_menu'] = Menu.objects.filter(pk=pk).first()
-            if context['random_menu']:
-                return context
-
-    # random menu pick v.1
-    # def get_context_data(self, **kwargs):
-    #     context['random_menu'] = Menu.objects.order_by('?').first()
-    #     return context
+        if Menu.objects.filter(카페=self.kwargs['pk']).exists():
+            context = super(ResultsView, self).get_context_data(**kwargs)
+            max_id = Menu.objects.all().aggregate(max_id=Max('id'))['max_id']
+            while True:
+                rand = random.randint(1, max_id)
+                context['random_menu'] = Menu.objects.filter(
+                    카페=self.kwargs['pk'], pk=rand).first()
+                if context['random_menu']:
+                    return context
