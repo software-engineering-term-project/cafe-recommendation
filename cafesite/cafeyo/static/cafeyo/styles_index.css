@@ -16,7 +16,7 @@
 body{
 	height: 900px;
 
-	background-image: url("images/background_image.png");
+	background-image: url("images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; 
 	background-position: center center; 
@@ -30,8 +30,153 @@ body{
 	margin-left: 50px;
 }
 
-.gate{
-	font-family: "tvN";
-	color: white;
-	font-size: 50px;
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    margin-left: 70%;
 }
+
+.container .map {
+    position: relative;
+    width: 500px;
+}
+
+.container .map path {
+    fill: transparent;
+    stroke-width: 2;
+    stroke: white;
+}
+
+.container .map.north {
+    top: 50px;
+}
+.container .map.north path{
+    stroke-dasharray: 272;
+    stroke-dashoffset: 0;
+}
+.container .map.north:hover path{
+    animation: animate-north 0.5s linear forwards;
+}
+
+@keyframes animate-north {
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    40%
+    {
+        stroke-dashoffset: 272;
+    }
+    80%
+    {
+        stroke-dashoffset: 544;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: 544;
+        fill: #31e8ff;
+    }
+}
+.container .map.main {
+ 
+}
+
+.container .map.main path{
+    stroke-dasharray: 1780;
+    stroke-dashoffset: 0;
+}
+.container .map.main:hover path{
+    animation: animate-main 0.5s linear forwards;
+}
+
+@keyframes animate-main {
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    40%
+    {
+        stroke-dashoffset: 1780;
+    }
+    80%
+    {
+        stroke-dashoffset: 3560;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: 3560;
+        fill: #31e8ff;
+    }
+}
+.container .map.west {
+    right: 220px;
+    top: 180px;
+}
+
+.container .map.west path{
+    stroke-dasharray: 273;
+    stroke-dashoffset: 0;
+}
+.container .map.west:hover path{
+    animation: animate-west 0.5s linear forwards;
+}
+
+@keyframes animate-west {
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    40%
+    {
+        stroke-dashoffset: 273;
+    }
+    80%
+    {
+        stroke-dashoffset: 546;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: 546;
+        fill: #31e8ff;
+    }
+}
+
+.container .map.east {
+    right: 600px;
+    top: 170px;
+}
+
+.container .map.east path{
+    stroke-dasharray: 290;
+    stroke-dashoffset: 0;
+}
+.container .map.east:hover path{
+    animation: animate-east 0.5s linear forwards;
+}
+
+@keyframes animate-east {
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    40%
+    {
+        stroke-dashoffset: 290;
+    }
+    80%
+    {
+        stroke-dashoffset: 580;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: 580;
+        fill: #31e8ff;
+    }
+}
+
