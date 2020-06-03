@@ -1,66 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Cafeyo - 경북대 카페 프로그램</title>
+    <title>SimpleShop</title>
+    <meta charset="utf-8" />
     {% load static %}
     <link
       rel="stylesheet"
-      text="text/css"
-      href="{% static 'cafeyo/styles.css' %}"
+      type="text/css"
+      href="{% static 'cafeyo/style3.css' %}"
     />
   </head>
-  <body>
-    <div class="header">
-      <div class="header__logo">
-        <a href="{% url 'cafeyo:index' %}">
-          카페요(로고 만들어서 이미지 넣기)
-        </a>
-      </div>
-    </div>
-    {% csrf_token %}
-    <h1>{{ cafe.카페명 }}</h1>
-    <div class="result__cafe">
-      <h3>{{ cafe.카페명 }}</h3>
-      <h6>전화번호: {{ cafe.전화번호 }}</h6>
-      <h6>주소: {{ cafe.주소 }}</h6>
-      <h6>영업시간: {{ cafe.영업시간 }}</h6>
-      <h6>카테고리: {{ cafe.카테고리 }}</h6>
-    </div>
-    <div class="result__menu">
-      <ul>
-        {% for menu in cafe.menu_set.all %}
-        <li>
-          <h6>이름: {{ menu.이름 }} / 가격: {{ menu.가격 }}</h6>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="result_random">
-      랜덤결과---{{ random_menu.이름 }} / {{ random_menu.가격 }} <br />
-      {{ cafe.x좌표 }} / {{ cafe.y좌표 }}
-    </div>
-    <div id="map" style="width: 500px; height: 400px;"></div>
-    <script
-      type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c16bd19938b4633ddd50051490e3c02"
-    ></script>
-    <script>
-      var container = document.getElementById("map");
-      var options = {
-        center: new kakao.maps.LatLng({{ cafe.x좌표 }}, {{ cafe.y좌표 }}),
-        level: 3,
-      };
-
-      var map = new kakao.maps.Map(container, options);
-
-      var markerPosition  = new kakao.maps.LatLng({{ cafe.x좌표 }}, {{ cafe.y좌표 }});
-
-      var marker = new kakao.maps.Marker({
-          position: markerPosition
-      });
-
-      marker.setMap(map);
-    </script>
-  </body>
+  <div class="back"></div>
 </html>

@@ -1,0 +1,22 @@
+@font-face{
+  src: url("fonts/treeR.ttf");
+  font-family: "Tree";
+}
+* {
+  box-sizing: border-box;
+}
+body{
+	margin: 0;
+  	min-width: 992px;
+  	background-color: #7A5B45;
+
+  	font-family: "Tree";
+}
+.back{
+	height: 900px;
+
+	background-image: url("images/background_3.png");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-position: center center;
+}

@@ -1,43 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Cafeyo - 경북대 카페 프로그램</title>
+    <title>SimpleShop</title>
+    <meta charset="utf-8" />
     {% load static %}
     <link
       rel="stylesheet"
-      text="text/css"
-      href="{% static 'cafeyo/styles.css' %}"
+      type="text/css"
+      href="{% static 'cafeyo/style.css' %}"
     />
   </head>
+
   <body>
-    <div class="header">
-      이부분은 헤더
-      <div class="header__logo">
-        <a href="{% url 'cafeyo:index' %}">
-          카페요(로고 만들어서 이미지 넣기)
-        </a>
-      </div>
+    <div class="back">
+      <a href="{% url 'cafeyo:index' %}" class="logo">
+        <img src="{% static 'cafeyo/images/logo.png' %}" width="300" />
+      </a>
+
+      <p>북문 동문 쪽문 정문</p>
     </div>
-    <a href="{% url 'cafeyo:cafelist' gate_id='1' %}">
-      <div class="gate__button">
-        북문테스트버튼
-      </div>
-    </a>
-    <a href="{% url 'cafeyo:cafelist' gate_id='2' %}">
-      <div class="gate__button">
-        테스트버튼
-      </div>
-    </a>
-    <a href="{% url 'cafeyo:cafelist' gate_id='3' %}">
-      <div class="gate__button">
-        테스트버튼
-      </div>
-    </a>
-    <a href="{% url 'cafeyo:cafelist' gate_id='4' %}">
-      <div class="gate__button">
-        테스트버튼
-      </div>
-    </a>
   </body>
 </html>

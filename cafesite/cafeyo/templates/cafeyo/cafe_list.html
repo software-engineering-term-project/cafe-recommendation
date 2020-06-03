@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Cafeyo - 경북대 카페 프로그램</title>
+    <title>SimpleShop</title>
+    <meta charset="utf-8" />
     {% load static %}
     <link
       rel="stylesheet"
-      text="text/css"
-      href="{% static 'cafeyo/styles.css' %}"
+      type="text/css"
+      href="{% static 'cafeyo/style2.css' %}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
     />
   </head>
+
   <body>
-    <div class="header">
-      <div class="header__logo">
-        <a href="{% url 'cafeyo:index' %}">
-          카페요(로고 만들어서 이미지 넣기)
+    <div class="back">
+      <div class="navbar">
+        <a href="{% url 'cafeyo:index' %}" class="logo">
+          <img src="{% static 'cafeyo/images/logo.png' %}" width="200" />
         </a>
+
+        <ul id="menu">
+          <li>
+            <a href="#">Study</a>
+          </li>
+          <li><a href="#">Franchise</a></li>
+          <li><a href="#">24h</a></li>
+          <li><a href="#">Take-out</a></li>
+          <li><a href="#">Bakery</a></li>
+        </ul>
+      </div>
+
+      <p>북문 카페 검색ㄱㄱ</p>
+
+      <div class="cafe-container">
+        {% for cafe in cafe_list %}
+        <div class="cafe">
+          <a href="{% url 'cafeyo:results' cafe.id %}">
+            <img
+              src="{% static 'cafeyo/images/cafe.png' %}"
+              width="250"
+              height="200"
+            />
+            <h3>{{ cafe.카페명 }}</h3>
+          </a>
+        </div>
+        {% endfor %}
       </div>
     </div>
-    <h1>{{ gate.문이름 }}</h1>
-    {% csrf_token %}
-    <div>
-      <div>추천카페: {{ random_cafe.카페명 }}</div>
-    </div>
-    {% for cafe in cafe_list %}
-    <div class="detail__list">
-      <a href="{% url 'cafeyo:results' cafe.id %}">
-        <h3>{{ cafe.카페명 }}</h3>
-        <h6>전화번호: {{ cafe.전화번호 }}</h6>
-        <h6>주소: {{ cafe.주소 }}</h6>
-        <h6>영업시간: {{ cafe.영업시간 }}</h6>
-        <h6>카테고리: {{ cafe.카테고리 }}</h6>
-      </a>
-    </div>
-    {% endfor %}
   </body>
 </html>
