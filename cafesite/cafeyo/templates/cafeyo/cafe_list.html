@@ -19,7 +19,7 @@
      <div class="back">
         
         <a href="{% url 'cafeyo:index' %}" class="logo">
-           <img src="../../static/cafeyo/images/logo.png" width="200">
+             <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
         </a>
 
         <ul id="menu">
@@ -44,7 +44,7 @@
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
 
-            <img src="../../static/cafeyo/images/cafe.png" width="250" height="200">
+            <img src="{% static 'cafeyo/images/cafe.png' %}" width="250" height="200">
             
             <h3>{{ cafe.카페명 }}</h3>
             <h6>전화번호: {{ cafe.전화번호 }}</h6>
