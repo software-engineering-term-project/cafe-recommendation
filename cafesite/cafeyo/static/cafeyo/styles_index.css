@@ -5,6 +5,10 @@
 @import "results.css";
 */
 
+svg {
+	overflow: visible;
+}
+
 @font-face{
 	src: url("fonts/tvN Enjoystories Medium.ttf");
 	font-family: "tvN";
@@ -77,7 +81,7 @@ body{
     100%
     {
         stroke-dashoffset: 544;
-        fill: #31e8ff;
+        fill: #dfe4ea;
     }
 }
 .container .map.main {
@@ -109,7 +113,7 @@ body{
     100%
     {
         stroke-dashoffset: 3560;
-        fill: #31e8ff;
+        fill: #dfe4ea;
     }
 }
 .container .map.west {
@@ -128,7 +132,8 @@ body{
 @keyframes animate-west {
     0%
     {
-        stroke-dashoffset: 0;
+		stroke-dashoffset: 0;
+		transform: translateX(0) translateY(0);
     }
     40%
     {
@@ -141,19 +146,22 @@ body{
     }
     100%
     {
-        stroke-dashoffset: 546;
-        fill: #31e8ff;
+		stroke-dashoffset: 546;
+		transform: translateX(-10px) translateY(10px);
+        fill: #dfe4ea;
     }
 }
 
 .container .map.east {
     right: 600px;
-    top: 170px;
+	top: 170px;
+	
 }
 
 .container .map.east path{
     stroke-dasharray: 290;
-    stroke-dashoffset: 0;
+	stroke-dashoffset: 0;
+
 }
 .container .map.east:hover path{
     animation: animate-east 0.5s linear forwards;
@@ -162,7 +170,9 @@ body{
 @keyframes animate-east {
     0%
     {
-        stroke-dashoffset: 0;
+		stroke-dashoffset: 0;
+		transform: translateX(0) translateY(0);
+		transform: scale(1.0);
     }
     40%
     {
@@ -170,13 +180,15 @@ body{
     }
     80%
     {
-        stroke-dashoffset: 580;
+		stroke-dashoffset: 580;
+		transform: translateX(-20px) translateY(20px);
         fill: transparent;
     }
     100%
     {
-        stroke-dashoffset: 580;
-        fill: #31e8ff;
+		stroke-dashoffset: 580;
+		transform: scale(1.2);
+        fill: #dfe4ea;
     }
 }
 
