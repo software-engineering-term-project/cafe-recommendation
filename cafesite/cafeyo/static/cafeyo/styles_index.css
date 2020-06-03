@@ -1,11 +1,15 @@
-@font-face{
-	src: url("fonts/DXMSubtitlesM.ttf");
-	font-family: "DX";
-}
+/*@import "reset.css";
+@import "header.css";
+@import "gate.css";
+@import "list.css";
+@import "results.css";
+*/
+
 @font-face{
 	src: url("fonts/tvN Enjoystories Medium.ttf");
 	font-family: "tvN";
 }
+
 * {
   box-sizing: border-box;
 }
@@ -18,18 +22,16 @@ body{
 	background-position: center center; 
 
 }
-.back{
-	
-}
-.logo{
+
+.logo{ 
 
 	line-height: 60px;
 	vertical-align: middle;
 	margin-left: 50px;
 }
 
-p{
+.gate{
 	font-family: "tvN";
 	color: white;
-	font-size: 80px;
+	font-size: 50px;
 }

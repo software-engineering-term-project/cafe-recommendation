@@ -7,17 +7,34 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'cafeyo/style.css' %}"
+      href="{% static 'cafeyo/styles_index.css' %}"
     />
   </head>
 
   <body>
-    <div class="back">
-      <a href="{% url 'cafeyo:index' %}" class="logo">
-        <img src="{% static 'cafeyo/images/logo.png' %}" width="300" />
-      </a>
+    <a href="#" class="logo">
+      <img src="../../static/cafeyo/images/logo.png" width="300">
+    </a>
+     
+    
+    {% if gate_list %}
+    <ul>
+      <div class="gate">
+        {% for gate in gate_list %}
+        <li>
+          <a href="{% url 'cafeyo:cafe_list' gate.id %}">
+            <div class="gate__button">
+              {{ gate.문이름 }}
+              <p>문 버튼 이미지</p>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </div>
+    </ul>
+    {% else %}
+    <p>No gate...</p>
+    {% endif %}
 
-      <p>북문 동문 쪽문 정문</p>
-    </div>
   </body>
 </html>

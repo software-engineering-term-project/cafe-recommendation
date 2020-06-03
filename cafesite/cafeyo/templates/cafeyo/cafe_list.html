@@ -7,7 +7,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'cafeyo/style2.css' %}"
+      href="{% static 'cafeyo/styles_cafe_list.css' %}"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
@@ -15,40 +15,47 @@
     />
   </head>
 
-  <body>
-    <div class="back">
-      <div class="navbar">
+    <body>
+     <div class="back">
+        
         <a href="{% url 'cafeyo:index' %}" class="logo">
-          <img src="{% static 'cafeyo/images/logo.png' %}" width="200" />
+           <img src="../../static/cafeyo/images/logo.png" width="200">
         </a>
 
         <ul id="menu">
-          <li>
-            <a href="#">Study</a>
-          </li>
-          <li><a href="#">Franchise</a></li>
-          <li><a href="#">24h</a></li>
-          <li><a href="#">Take-out</a></li>
-          <li><a href="#">Bakery</a></li>
+          <li><a href="#">Study</a></li>
+           <li><a href="#">Franchise</a></li>
+            <li><a href="#">24h</a></li>
+             <li><a href="#">Take-out</a></li>
+             <li><a href="#">Bakery</a></li>
         </ul>
+        
+      
+
+      <h1>{{ gate.문이름 }}</h1>
+      {% csrf_token %}
+
+      
+      <div>
+        <div>추천카페: {{ random_cafe.카페명 }}</div>
       </div>
-
-      <p>북문 카페 검색ㄱㄱ</p>
-
+      {% for cafe in gate.cafe_set.all %}
       <div class="cafe-container">
-        {% for cafe in cafe_list %}
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
-            <img
-              src="{% static 'cafeyo/images/cafe.png' %}"
-              width="250"
-              height="200"
-            />
+
+            <img src="../../static/cafeyo/images/cafe.png" width="250" height="200">
+            
             <h3>{{ cafe.카페명 }}</h3>
+            <h6>전화번호: {{ cafe.전화번호 }}</h6>
+            <h6>주소: {{ cafe.주소 }}</h6>
+            <h6>영업시간: {{ cafe.영업시간 }}</h6>
+            <h6>카테고리: {{ cafe.카테고리 }}</h6>
           </a>
         </div>
-        {% endfor %}
+      {% endfor %}
       </div>
-    </div>
-  </body>
+
+      </div>
+    </body>
 </html>
