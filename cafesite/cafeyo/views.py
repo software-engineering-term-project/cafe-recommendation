@@ -27,28 +27,26 @@ class CafelistView(generic.ListView):
             return Cafe.objects.filter(문=self.kwargs['gate_id'])
 
     def get_context_data(self, **kwargs):
+        context = super(CafelistView, self).get_context_data(**kwargs)
+        max_id = Cafe.objects.all().aggregate(max_id=Max('id'))['max_id']
         if 'category_id' in self.kwargs:
             if Cafe.objects.filter(문=self.kwargs['gate_id'], 카테고리=self.kwargs['category_id']).exists():
-                context = super(CafelistView, self).get_context_data(**kwargs)
-                max_id = Cafe.objects.all().aggregate(
-                    max_id=Max('id'))['max_id']
                 while True:
                     rand = random.randint(1, max_id)
                     context['random_cafe'] = Cafe.objects.filter(
                         문=self.kwargs['gate_id'], 카테고리=self.kwargs['category_id'], pk=rand).first()
                     if context['random_cafe']:
-                        return context
+                        break
         else:
             if Cafe.objects.filter(문=self.kwargs['gate_id']).exists():
-                context = super(CafelistView, self).get_context_data(**kwargs)
-                max_id = Cafe.objects.all().aggregate(
-                    max_id=Max('id'))['max_id']
                 while True:
                     rand = random.randint(1, max_id)
                     context['random_cafe'] = Cafe.objects.filter(
                         문=self.kwargs['gate_id'], pk=rand).first()
                     if context['random_cafe']:
-                        return context
+                        break
+        context['id_param'] = self.kwargs['gate_id']
+        return context
 
 
 class ResultsView(generic.DetailView):
