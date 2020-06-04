@@ -37,14 +37,14 @@
 
       
       <div>
-        <div>추천카페: {{ random_cafe.카페명 }}</div>
+        <div><p id = "recommend-cafe">추천카페: {{ random_cafe.카페명 }}</p></div>
       </div>
       {% for cafe in cafe_list %}
       <div class="cafe-container">
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
 
-            <img src="{% static 'cafeyo/images/cafe.png' %}" width="250" height="200">
+            <img src="{% static 'cafeyo/images/cafe.png' %}" width="300" height="250">
             
             <h3>{{ cafe.카페명 }}</h3>
             <h6>전화번호: {{ cafe.전화번호 }}</h6>

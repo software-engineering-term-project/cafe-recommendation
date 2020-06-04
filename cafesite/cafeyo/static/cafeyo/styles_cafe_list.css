@@ -36,6 +36,19 @@ body{
   margin-bottom: 65px;
 }
 
+#recommend-cafe{
+  color: #319AFD ;
+  font-size: 35px;
+  text-align: center;
+  width: 500px;
+  font-family: "Pho";
+  padding: 20px 20px;
+  border-radius: 40px;
+  background-color: #EEE2E2;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 #menu{
   float: right;
@@ -59,7 +72,7 @@ body{
   font-weight: bold;
   
   
-  border-left: solid #EEB148;
+  border-left: solid #319AFD;
   /*border-radius: 15px;*/
   padding: 0px 45px;
 }
@@ -74,8 +87,6 @@ body{
 
 .cafe{
   float: left;
- 
- 
   background-color: white;
   width: 500px;
   height:  200px;
@@ -101,4 +112,6 @@ body{
   color: black;
 
 }
+
+
 
