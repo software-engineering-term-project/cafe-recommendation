@@ -126,7 +126,7 @@ body{
     stroke-dashoffset: 0;
 }
 .container .map.west:hover path{
-    animation: animate-west 0.5s linear forwards;
+    animation: animate-west 0.2s linear forwards;
 }
 
 @keyframes animate-west {
