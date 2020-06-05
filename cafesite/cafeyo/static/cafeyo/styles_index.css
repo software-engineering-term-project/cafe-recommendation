@@ -170,23 +170,23 @@ body{
 @keyframes animate-east {
     0%
     {
-		stroke-dashoffset: 0;
+		/* stroke-dashoffset: 0; */
 		transform: translateX(0) translateY(0);
 		transform: scale(1.0);
     }
     40%
     {
-        stroke-dashoffset: 290;
+        /* stroke-dashoffset: 290; */
     }
     80%
     {
-		stroke-dashoffset: 580;
+		/* stroke-dashoffset: 580; */
 		transform: translateX(-20px) translateY(20px);
         fill: transparent;
     }
     100%
     {
-		stroke-dashoffset: 580;
+		/* stroke-dashoffset: 580; */
 		transform: scale(1.2);
         fill: #dfe4ea;
     }
