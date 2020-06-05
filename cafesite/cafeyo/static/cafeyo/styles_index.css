@@ -82,7 +82,7 @@ body{
     100%
     {
         stroke-dashoffset: 544;
-        transform: translateX(-10px) translateY(10px);
+        transform: translateX(-10px) translateY(-10px);
         fill: #dfe4ea;
     }
 }
@@ -116,7 +116,7 @@ body{
     100%
     {
         stroke-dashoffset: 3560;
-        transform: translateX(-10px) translateY(10px);
+        transform: translateX(10px) translateY(-10px);
         fill: #dfe4ea;
     }
 }
@@ -151,7 +151,7 @@ body{
     100%
     {
 		stroke-dashoffset: 546;
-		transform: translateX(-10px) translateY(10px);
+		transform: translateX(10px) translateY(10px);
         fill: #dfe4ea;
     }
 }
@@ -185,13 +185,13 @@ body{
     80%
     {
 		stroke-dashoffset: 580;
-		transform: translateX(-20px) translateY(20px);
         fill: transparent;
     }
     100%
     {
-		stroke-dashoffset: 580;
-		transform: scale(1.2);
+        stroke-dashoffset: 580;
+        transform: translateX(-10px) translateY(10px);
+		/* transform: scale(1.2); */
         fill: #dfe4ea;
     }
 }
