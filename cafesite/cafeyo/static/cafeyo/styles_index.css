@@ -132,21 +132,21 @@ body{
 @keyframes animate-west {
     0%
     {
-		stroke-dashoffset: 0;
+		/* stroke-dashoffset: 0; */
 		transform: translateX(0) translateY(0);
     }
     40%
     {
-        stroke-dashoffset: 273;
+        /* stroke-dashoffset: 273; */
     }
     80%
     {
-        stroke-dashoffset: 546;
+        /* stroke-dashoffset: 546; */
         fill: transparent;
     }
     100%
     {
-		stroke-dashoffset: 546;
+		/* stroke-dashoffset: 546; */
 		transform: translateX(-10px) translateY(10px);
         fill: #dfe4ea;
     }
