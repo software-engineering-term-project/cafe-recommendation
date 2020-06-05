@@ -68,6 +68,7 @@ body{
     0%
     {
         stroke-dashoffset: 0;
+        transform: translateX(0) translateY(0);
     }
     40%
     {
@@ -81,6 +82,7 @@ body{
     100%
     {
         stroke-dashoffset: 544;
+        transform: translateX(-10px) translateY(10px);
         fill: #dfe4ea;
     }
 }
@@ -100,6 +102,7 @@ body{
     0%
     {
         stroke-dashoffset: 0;
+        transform: translateX(0) translateY(0);
     }
     40%
     {
@@ -113,6 +116,7 @@ body{
     100%
     {
         stroke-dashoffset: 3560;
+        transform: translateX(-10px) translateY(10px);
         fill: #dfe4ea;
     }
 }
@@ -126,7 +130,7 @@ body{
     stroke-dashoffset: 0;
 }
 .container .map.west:hover path{
-    animation: animate-west 0.2s linear forwards;
+    animation: animate-west 0.5s linear forwards;
 }
 
 @keyframes animate-west {
