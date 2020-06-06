@@ -56,20 +56,20 @@ body{
 #gate li{
   float:left;
   /*margin-right: 45px ;*/
-  line-height: 80px;
+  line-height: 90px;
 
 }
 #gate li a{
   font-family: 'pencil';
   color: white;
-  font-size: 35px;
+  font-size: 40px;
   text-decoration: none;
   /* font-weight: bold; */
   
   
   border-left: solid #319AFD;
   /*border-radius: 15px;*/
-  padding: 0px 45px;
+  padding: 0px 50px;
 }
 #gate li a.active{
   font-weight: normal;
