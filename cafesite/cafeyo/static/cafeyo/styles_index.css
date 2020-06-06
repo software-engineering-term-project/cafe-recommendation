@@ -55,8 +55,8 @@ body{
 }
 
 .container .map.north {
-    top: -120px;
-    left: 100px;
+    top: -20px;
+    left: 200px;
     width: 550px;
 }
 .container .map.north path{
@@ -89,21 +89,21 @@ body{
         fill: #dfe4ea;
     }
 }
-.container .map.main {
+.container .map.east {
     width: 230px;
-    top: -140px;
-    left: 600px;
+    top: -40px;
+    left: 650px;
 }
 
-.container .map.main path{
+.container .map.east path{
     stroke-dasharray: 1780;
     stroke-dashoffset: 0;
 }
-.container .map.main:hover path{
-    animation: animate-main 0.5s linear forwards;
+.container .map.east:hover path{
+    animation: animate-east 0.5s linear forwards;
 }
 
-@keyframes animate-main {
+@keyframes animate-east {
     0%
     {
         stroke-dashoffset: 0;
@@ -125,21 +125,21 @@ body{
         fill: #dfe4ea;
     }
 }
-.container .map.west {
-    left: 600px;
-    top: 140px;
+.container .map.main {
+    left: 650px;
+    top: 240px;
     width: 280px;
 }
 
-.container .map.west path{
+.container .map.main path{
     stroke-dasharray: 273;
     stroke-dashoffset: 0;
 }
-.container .map.west:hover path{
-    animation: animate-west 0.5s linear forwards;
+.container .map.main:hover path{
+    animation: animate-main 0.5s linear forwards;
 }
 
-@keyframes animate-west {
+@keyframes animate-main {
     0%
     {
 		stroke-dashoffset: 0;
@@ -162,22 +162,22 @@ body{
     }
 }
 
-.container .map.east {
-    left: 130px;
-	top: 180px;
+.container .map.side {
+    left: 210px;
+	top: 270px;
 	width: 470px;
 }
 
-.container .map.east path{
+.container .map.side path{
     stroke-dasharray: 290;
 	stroke-dashoffset: 0;
 
 }
-.container .map.east:hover path{
-    animation: animate-east 0.5s linear forwards;
+.container .map.side:hover path{
+    animation: animate-side 0.5s linear forwards;
 }
 
-@keyframes animate-east {
+@keyframes animate-side {
     0%
     {
 		stroke-dashoffset: 0;
