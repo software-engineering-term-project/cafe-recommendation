@@ -3,6 +3,7 @@
   <head>
     <title>SimpleShop</title>
     <meta charset="utf-8" />
+
     {% load static %}
     <link
       rel="stylesheet"
@@ -19,29 +20,67 @@
      </a>
 
   <div class="container">
+    {% csrf_token %}
     <div class="cafe">
       
       <img src="{% static 'cafeyo/images/cafe.png' %}" width="200">
-      
-      <div class="info">
-      <h7>카페이름</h7>
-      <h3>주소</h3>
-      <h4>전화번호</h4>
-      <h5>open~close</h5>
-      <h6>등등</h6>
+      <h3>{{ cafe.카페명 }}</h3>
+      <div class="result_cafe">
+        
+        <h6>전화번호: {{ cafe.전화번호 }}</h6>
+        <h6>주소: {{ cafe.주소 }}</h6>
+        <h6>영업시간: {{ cafe.영업시간 }}</h6>
+        <h6>카테고리: {{ cafe.카테고리 }}</h6>
       </div>
 
-      <a href="#">
-        <img src="{% static 'cafeyo/images/random.png' %}" width="130" >
+      <div class="result_menu">
+        <ul>
+          {% for menu in cafe.menu_set.all %}
+          <li>
+            <h6>이름: {{ menu.이름 }} / 가격: {{ menu.가격 }}</h6>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <a href="#" class="random">
+        <img src="{% static 'cafeyo/images/random_2.png' %}" width="130" >
       </a>
 
-    <div class="map">
 
-    </div>  
 
   </div>
-</div>
-   </div>
+
+  <div class="map">
+
+  </div> 
+
+  </div>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+  jQuery(function($) {
+    $("body").css("display", "none");
+    $("body").fadeIn(2200);
+    $("a.transition").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("body").fadeOut(1000, redirectPage);
+    });
+    function redirectPage() {
+    window.location = linkLocation;
+    }
+    });</script>
+
+
+  
+
+
 
   </body>
 </html>
