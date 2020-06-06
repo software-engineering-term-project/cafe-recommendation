@@ -17,7 +17,8 @@ body{
 	background-image: url("images/background_3.png");
 	background-repeat: no-repeat;
 	background-size: cover; 
-	background-position: top;
+  background-position: top;
+  z-index:2;
 }
 .side_nav{
   height: 100%;
@@ -41,13 +42,6 @@ body{
   margin-top: 25px;
   margin-bottom: 65px;
 }
-.left_contain{
-  height: 100%;
-  width: 100%;
-  
-}
-
-
 #menu{
   float: right;
   list-style: none;
@@ -132,8 +126,11 @@ ul#gate, ul#gate ul{
   background-color: rgba( 255, 255, 255, 0.4 );
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
+  margin-top: 200px;
   margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+  /* position: fixed; */
 
 }
 
