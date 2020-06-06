@@ -17,11 +17,21 @@
 
     <body>
      <div class="back">
-        
+      <div class="side_nav">
         <a href="{% url 'cafeyo:index' %}" class="logo">
-             <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
+              <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
         </a>
+          <ul id="gate">
+                    <li><a href="#">Study</a></li>
+                    <li><a href="#">Franchise</a></li>
+                    <li><a href="#">24h</a></li>
+                      <li><a href="#">Take-out</a></li>
+                      <li><a href="#">Bakery</a></li>
+                  </ul>
 
+      </div>
+        
+      <div class="left_contain">
         <ul id="menu">
           <li><a href="#">Study</a></li>
            <li><a href="#">Franchise</a></li>
@@ -30,21 +40,15 @@
              <li><a href="#">Bakery</a></li>
         </ul>
         
-        <ul id="gate">
-          <li><a href="#">Study</a></li>
-          <li><a href="#">Franchise</a></li>
-           <li><a href="#">24h</a></li>
-            <li><a href="#">Take-out</a></li>
-            <li><a href="#">Bakery</a></li>
-        </ul>
+        
       
-
+<!-- 
       <h1>{{ gate.문이름 }}</h1>
-      {% csrf_token %}
+      {% csrf_token %} -->
 
-      <div>
+      
         <div id="recommend-cafe">추천카페: {{ random_cafe.카페명 }}</div>
-      </div>
+      
       {% for cafe in cafe_list %}
       <div class="cafe-container">
         <div class="cafe">
@@ -64,7 +68,7 @@
         </div>
       {% endfor %}
       </div>
-
+    </div>
       </div>
     </body>
 </html>
