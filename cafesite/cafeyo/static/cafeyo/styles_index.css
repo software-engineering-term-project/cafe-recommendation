@@ -60,7 +60,7 @@ body{
     width: 550px;
 }
 .container .map.north path{
-    stroke-dasharray: 272;
+    stroke-dasharray: 143;
     stroke-dashoffset: 0;
 }
 .container .map.north:hover path{
@@ -75,16 +75,16 @@ body{
     }
     40%
     {
-        stroke-dashoffset: 272;
+        stroke-dashoffset: 143;
     }
     80%
     {
-        stroke-dashoffset: 544;
+        stroke-dashoffset: 286;
         fill: transparent;
     }
     100%
     {
-        stroke-dashoffset: 544;
+        stroke-dashoffset: 286;
         transform: translateX(-10px) translateY(-10px);
         fill: #dfe4ea;
     }
@@ -96,7 +96,7 @@ body{
 }
 
 .container .map.east path{
-    stroke-dasharray: 1780;
+    stroke-dasharray: 137;
     stroke-dashoffset: 0;
 }
 .container .map.east:hover path{
@@ -111,16 +111,16 @@ body{
     }
     40%
     {
-        stroke-dashoffset: 1780;
+        stroke-dashoffset: 137;
     }
     80%
     {
-        stroke-dashoffset: 3560;
+        stroke-dashoffset: 274;
         fill: transparent;
     }
     100%
     {
-        stroke-dashoffset: 3560;
+        stroke-dashoffset: 274;
         transform: translateX(10px) translateY(-10px);
         fill: #dfe4ea;
     }
@@ -132,7 +132,7 @@ body{
 }
 
 .container .map.main path{
-    stroke-dasharray: 273;
+    stroke-dasharray: 184;
     stroke-dashoffset: 0;
 }
 .container .map.main:hover path{
@@ -147,16 +147,16 @@ body{
     }
     40%
     {
-        stroke-dashoffset: 273;
+        stroke-dashoffset: 184;
     }
     80%
     {
-        stroke-dashoffset: 546;
+        stroke-dashoffset: 368;
         fill: transparent;
     }
     100%
     {
-		stroke-dashoffset: 546;
+		stroke-dashoffset: 368;
 		transform: translateX(10px) translateY(10px);
         fill: #dfe4ea;
     }
@@ -169,7 +169,7 @@ body{
 }
 
 .container .map.side path{
-    stroke-dasharray: 290;
+    stroke-dasharray: 150;
 	stroke-dashoffset: 0;
 
 }
@@ -186,18 +186,17 @@ body{
     }
     40%
     {
-        stroke-dashoffset: 290;
+        stroke-dashoffset: 150;
     }
     80%
     {
-		stroke-dashoffset: 580;
+		stroke-dashoffset: 300;
         fill: transparent;
     }
     100%
     {
-        stroke-dashoffset: 580;
+        stroke-dashoffset: 300;
         transform: translateX(-10px) translateY(10px);
-		/* transform: scale(1.2); */
         fill: #dfe4ea;
     }
 }
