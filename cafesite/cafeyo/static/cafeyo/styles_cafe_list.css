@@ -6,7 +6,6 @@
   src: url("fonts/HoonMakdaeyunpilR.ttf");
   font-family: "pencil";
 }
-
 * {
   box-sizing: border-box;
 }
@@ -76,6 +75,10 @@ body{
 }
 #gate li a:hover:not(.active){
   font-weight: bold;
+
+}
+#gate li h{
+  font-size:50;
 
 }
 ul#menu{
