@@ -2,6 +2,10 @@
   src: url("fonts/old_photo4.ttf");
   font-family: "Pho";
 }
+@font-face{
+  src: url("fonts/HoonMakdaeyunpilR.ttf");
+  font-family: "pencil";
+}
 
 * {
   box-sizing: border-box;
@@ -13,7 +17,6 @@ body{
 }
 .back{
 	height: 900px;
-
 	background-image: url("images/background_3.png");
 	background-repeat: no-repeat;
 	background-size: cover; 
@@ -42,7 +45,7 @@ body{
   margin-top: 25px;
   margin-bottom: 65px;
 }
-#menu{
+#gate{
   float: right;
   list-style: none;
   padding: 10px;
@@ -50,62 +53,66 @@ body{
 
 
 }
-#menu li{
+#gate li{
   float:left;
   /*margin-right: 45px ;*/
   line-height: 80px;
 
 }
-#menu li a{
-  font-family: 'Roboto Mono', monospace;
+#gate li a{
+  font-family: 'pencil';
   color: white;
-  font-size: 25px;
+  font-size: 35px;
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
   
   
   border-left: solid #319AFD;
   /*border-radius: 15px;*/
   padding: 0px 45px;
 }
-ul#gate{
+ul#menu{
   float: left;
   width: 250px;
   text-indent:10px;
 
 }
-ul#gate, ul#gate ul{
-  margin: 0;
+ul#menu, ul#menu ul{
+  margin-top: 70px;
   padding:0;
   list-style: none;
 }
-#gate li{
+#menu li{
   float:none;
   /*margin-right: 45px ;*/
   margin-bottom: 3px;
-  line-height: 50px;
-  background-color: rgba( 255, 255, 255, 0.4 );
+  line-height: 70px;
+  /* background-color: rgba( 255, 255, 255, 0.4 ); */
+  background-color: rgba(0,0,0,0.5);
   cursor: pointer;
 }
-#gate li a{
+#menu li a{
   display: block;
   width:100%;
   height:100%;
-  font-family: 'Roboto Mono', monospace;
-  color:black;
+  font-family: 'Roboto Mono';
+  
   font-size: 25px;
   text-decoration: none;
   font-weight: bold;  
-  /* border-left: solid #319AFD;
-  border-radius: 15px; */
+  /* 
+  color:black; */
+  color: white;
   padding: 0px 20px;
 }
-#gate li a.active{
+#menu li a.active{
   color: white;
 }
-#gate li a:hover:not(.active){
-  background-color: #555;
-  color: white;
+#menu li a:hover:not(.active){
+  /* background-color: #555; */
+  background-color: rgba( 255, 255, 255, 0.4 );
+  color: black;
+
 }
 .cafe-container{
 
@@ -114,7 +121,14 @@ ul#gate, ul#gate ul{
   margin-left: auto;
 
 }
-#recommend-cafe{
+.right-top{
+  width: 100%;
+  height: 150px;
+}
+.right-bottom{
+  margin-top:100px;
+}
+/* #recommend-cafe{
   color: #2E86C1;
   font-size: 35px;
   text-align: center;
@@ -126,13 +140,13 @@ ul#gate, ul#gate ul{
   background-color: rgba( 255, 255, 255, 0.4 );
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 50px;
   margin-bottom: 20px;
   z-index: 1;
   position: relative;
-  /* position: fixed; */
+  
 
-}
+} */
 
 .cafe{
   float: left;
@@ -153,19 +167,29 @@ ul#gate, ul#gate ul{
 .cafe a{
   text-decoration: none;
   color: black;
-
+  display: flex;
 }
 .image{
- 
+  height: 200px;
+  width: 200px;
 }
-.imformation{
-  float: left;
-font-family: "Pho" ;
-color: black;
-font-size: 5px;   
-/* background-color: rgba( 255, 255, 255, 0.4 );
+
+.image img {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+.information{
+  padding: 5px;
+  height: 200px;
   width: 300px;
-  height:  200px; */
+  float: left;
+  font-family: "Pho" ;
+  color: black;
+  font-size: 5px;   
+  /* background-color: rgba( 255, 255, 255, 0.4 );
+    width: 300px;
+    height:  200px; */
 }
 
 
