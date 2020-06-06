@@ -54,12 +54,22 @@ class ResultsView(generic.DetailView):
     template_name = 'cafeyo/results.html'
 
     def get_context_data(self, **kwargs):
-        if Menu.objects.filter(카페=self.kwargs['pk']).exists():
+        if Menu.objects.filter(카페=self.kwargs['pk'], 카페인=True).exists():
             context = super(ResultsView, self).get_context_data(**kwargs)
             max_id = Menu.objects.all().aggregate(max_id=Max('id'))['max_id']
             while True:
                 rand = random.randint(1, max_id)
-                context['random_menu'] = Menu.objects.filter(
-                    카페=self.kwargs['pk'], pk=rand).first()
-                if context['random_menu']:
-                    return context
+                context['cafein_menu'] = Menu.objects.filter(
+                    카페=self.kwargs['pk'], 카페인=True, pk=rand).first()
+                if context['cafein_menu']:
+                    break
+
+        if Menu.objects.filter(카페=self.kwargs['pk'], 카페인=False).exists():
+            while True:
+                rand = random.randint(1, max_id)
+                context['decafein_menu'] = Menu.objects.filter(
+                    카페=self.kwargs['pk'], 카페인=False, pk=rand).first()
+                if context['decafein_menu']:
+                    break
+
+        return context
