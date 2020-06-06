@@ -43,15 +43,11 @@
       
 
       <div class="right-bottom">
-      
-        <!-- <div id="recommend-cafe">추천카페: {{ random_cafe.카페명 }}
-        </div> -->
-      
         <div class="cafe-container">
           <div class="cafe">
             <a href="{% url 'cafeyo:results' random_cafe.id %}">
               <div class ="image">
-                <img src="{% static 'cafeyo/images/cafe.png' %}" width="250" height="200">
+                <img src="{% static random_cafe.cafe_path %}" width="250" height="200">
               </div>
                 <div class ="information">
                 <h3>{{ random_cafe.카페명 }}</h3>
@@ -62,11 +58,11 @@
               </div>
               </a>
             </div>
-          {% for cafe in cafe_list %}
+        {% for cafe in cafe_list %}
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
             <div class ="image">
-              <img src="{% static 'cafeyo/images/cafe.png' %}" width="250" height="200">
+              <img src="{% static cafe.cafe_path %}" width="250" height="200">
             </div>
               <div class ="information">
                 <h3>{{ cafe.카페명 }}</h3>
@@ -77,7 +73,7 @@
               </div>
             </a>
           </div>
-      {% endfor %}
+        {% endfor %}
         </div>
       </div>
     </div>
