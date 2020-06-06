@@ -19,7 +19,7 @@ svg {
 }
 body{
 	height: 900px;
-
+    margin: 0;
 	background-image: url("images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; 
@@ -37,24 +37,27 @@ body{
 .container {
     position: relative;
     width: 800px;
-    height: 500px;
+    height: 600px;
     display: flex;
-    margin-left: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container .map {
-    position: relative;
-    width: 500px;
+    position: absolute;
+    width: 300px;
 }
 
 .container .map path {
     fill: transparent;
-    stroke-width: 2;
+    stroke-width: 0.7   ;
     stroke: white;
 }
 
 .container .map.north {
-    top: 50px;
+    top: -120px;
+    left: 100px;
+    width: 550px;
 }
 .container .map.north path{
     stroke-dasharray: 272;
@@ -87,7 +90,9 @@ body{
     }
 }
 .container .map.main {
- 
+    width: 230px;
+    top: -140px;
+    left: 600px;
 }
 
 .container .map.main path{
@@ -121,8 +126,9 @@ body{
     }
 }
 .container .map.west {
-    right: 220px;
-    top: 180px;
+    left: 600px;
+    top: 140px;
+    width: 280px;
 }
 
 .container .map.west path{
@@ -157,9 +163,9 @@ body{
 }
 
 .container .map.east {
-    right: 600px;
-	top: 170px;
-	
+    left: 130px;
+	top: 180px;
+	width: 470px;
 }
 
 .container .map.east path{
