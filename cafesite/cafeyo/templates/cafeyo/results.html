@@ -10,5 +10,38 @@
       href="{% static 'cafeyo/styles_results.css' %}"
     />
   </head>
-  <div class="back"></div>
+
+  <body>
+    <div class="back">
+
+     <a href="{% url 'cafeyo:index' %}" class="logo">
+        <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
+     </a>
+
+  <div class="container">
+    <div class="cafe">
+      
+      <img src="{% static 'cafeyo/images/cafe.png' %}" width="200">
+      
+      <div class="info">
+      <h7>카페이름</h7>
+      <h3>주소</h3>
+      <h4>전화번호</h4>
+      <h5>open~close</h5>
+      <h6>등등</h6>
+      </div>
+
+      <a href="#">
+        <img src="{% static 'cafeyo/images/random.png' %}" width="130" >
+      </a>
+
+    <div class="map">
+
+    </div>  
+
+  </div>
+</div>
+   </div>
+
+  </body>
 </html>

@@ -17,11 +17,21 @@
 
     <body>
      <div class="back">
-        
+      <div class="side_nav">
         <a href="{% url 'cafeyo:index' %}" class="logo">
-             <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
+              <img src="{% static 'cafeyo/images/logo.png' %}" width="200">
         </a>
+          <ul id="gate">
+                    <li><a href="#">Study</a></li>
+                    <li><a href="#">Franchise</a></li>
+                    <li><a href="#">24h</a></li>
+                      <li><a href="#">Take-out</a></li>
+                      <li><a href="#">Bakery</a></li>
+                  </ul>
 
+      </div>
+        
+      <div class="left_contain">
         <ul id="menu">
           <li><a href="#">Study</a></li>
            <li><a href="#">Franchise</a></li>
@@ -30,31 +40,35 @@
              <li><a href="#">Bakery</a></li>
         </ul>
         
+        
       
-
+<!-- 
       <h1>{{ gate.문이름 }}</h1>
-      {% csrf_token %}
+      {% csrf_token %} -->
 
-      <div>
+      
         <div id="recommend-cafe">추천카페: {{ random_cafe.카페명 }}</div>
-      </div>
+      
       {% for cafe in cafe_list %}
       <div class="cafe-container">
         <div class="cafe">
+          <div class ="image">
           <a href="{% url 'cafeyo:results' cafe.id %}">
 
             <img src="{% static 'cafeyo/images/cafe.png' %}" width="250" height="200">
-            
+          </div>
+            <div class ="imformation">
             <h3>{{ cafe.카페명 }}</h3>
             <h6>전화번호: {{ cafe.전화번호 }}</h6>
             <h6>주소: {{ cafe.주소 }}</h6>
             <h6>영업시간: {{ cafe.영업시간 }}</h6>
             <h6>카테고리: {{ cafe.카테고리 }}</h6>
+            </div>
           </a>
         </div>
       {% endfor %}
       </div>
-
+    </div>
       </div>
     </body>
 </html>
