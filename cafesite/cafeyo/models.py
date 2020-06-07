@@ -22,9 +22,9 @@ class Cafe(models.Model):
     카테고리 = models.ForeignKey(
         Category, null=True, blank=True, on_delete=models.SET_NULL)
     카페명 = models.CharField(max_length=20)
-    전화번호 = models.CharField(max_length=20)
+    전화번호 = models.CharField(max_length=20, blank=True)
     주소 = models.CharField(max_length=30)
-    영업시간 = models.CharField(max_length=20)
+    영업시간 = models.CharField(max_length=20, blank=True)
     cafe_path = models.TextField(null=True)
 
     def __str__(self):
