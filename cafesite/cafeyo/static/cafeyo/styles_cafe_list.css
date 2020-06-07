@@ -154,6 +154,37 @@ ul#menu, ul#menu ul{
 
   
 }
+
+.right-bottom h2{
+  font-size: 35px;
+  color: #5D6D7E;
+  margin-top: 60px;
+  margin-bottom:60px;
+  text-align: center;
+  width:100%;
+  padding:0;
+  font-weight: bold;
+}
+.right-bottom h2:after{
+  display:inline-block; 
+  margin:0 0 3px 20px;
+  height: 1px;
+  content: "";
+  text-shadow: none;
+  background-color: #5D6D7E;
+  width:650px;
+}
+.right-bottom h2:before{
+  display: inline-block;
+  margin:0 20px 3px 0; 
+  height: 1px;
+  content:"";
+  text-shadow:none;
+  background-color:#5D6D7E;
+  width:650px;
+
+}
+
 /* #recommend-cafe{
   color: #2E86C1;
   font-size: 35px;
