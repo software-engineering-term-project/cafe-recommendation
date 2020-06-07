@@ -3,16 +3,34 @@
   <head>
     <title>SimpleShop</title>
     <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
     {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'cafeyo/styles_index.css' %}"
     />
+    <script>
+      $( document ).ready(function() {
+        TweenMax.set($('.logo'),{autoAlpha:0,display:"flex"});
+        TweenMax.set($('.map.north'),{autoAlpha:0,display:"none"});
+        TweenMax.set($('.map.main'),{autoAlpha:0,display:"none"});
+        TweenMax.set($('.map.side'),{autoAlpha:0,display:"none"});
+        TweenMax.set($('.map.east'),{autoAlpha:0,display:"none"});
+        TweenMax.to($('.logo'),0.5, {autoAlpha:1,display:"flex" ,delay:2});
+        TweenMax.to($('.map.north'),.5, {autoAlpha:1,display:"flex"});
+        TweenMax.to($('.map.main'),.5, {autoAlpha:1,display:"flex",delay:1.5});
+        TweenMax.to($('.map.side'),.5, {autoAlpha:1,display:"flex",delay:1});
+        TweenMax.to($('.map.east'),.5, {autoAlpha:1,display:"flex" ,delay:0.5});
+    });
+
+    </script>
   </head>
 
   <body>
-    <a href="{% url 'cafeyo:index' %}" class="logo">
+    <div class="navbar">
+    <a href="{% url 'cafeyo:index' %}" class="logo" style="opacity: 1;">
       <img src="{% static 'cafeyo/images/logo_6.png' %}" width="300">
     </a>
 
@@ -72,6 +90,7 @@
           </g>
          </svg>
       </div>
+  </div>
   </div>
      
   </body>
