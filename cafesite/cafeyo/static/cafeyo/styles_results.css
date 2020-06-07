@@ -124,10 +124,12 @@ h1{
   font-weight: normal;
 }
 #gate li a:hover:not(.active){
-  font-weight: bold;
+  font-weight: bolder;
+  text-shadow: 1px 2px 2px #5D6D7E;
+  line-height: 40px;
+  color:#BDC3C7;
 
 }
-
 
 .logo img{
 
