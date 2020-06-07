@@ -1,58 +1,66 @@
-body {
-    padding: 60px;
-      background: #f3f3f3;
-      min-height: 100vh;
+@keyframes sparkle {
+    from {
+      background-position: 0% 100%;
     }
-    
-    @keyframes sparkle {
-      from {
-        background-position: 0% 100%;
-      }
-      to {
-        background-position: 200% 100%;
-      }
+    to {
+      background-position: 200% 100%;
     }
+  }
+  @font-face{
+    src: url("fonts/Dacncing_Script/DancingScript-VariableFont_wght.ttf");
+    font-family: "dancing";
+  }
+  
+  $c1: #7FEFBD;
+  $c2: #FFF689;
+  $c3: #EC0B43;
+  
+  // $c1: #F8333C;
+  // $c2: #2B9EB3;
+  // $c3: #44AF69;
+  
+  #reco-deco {
+    background-color: none;
+    display: inline-block;
     
-    $c1: #7FEFBD;
-    $c2: #FFF689;
-    $c3: #EC0B43;
+    border-radius: 4px;
+    position: relative;
+    color: black;
+
+    font-size:30px;
+    font-weight: bold;
+    margin-block-start: 45px;
+    margin-block-end: 20px;
+    margin-inline-start: 5px;
+    margin-inline-end: 0px;
+  
     
-    // $c1: #F8333C;
-    // $c2: #2B9EB3;
-    // $c3: #44AF69;
-    
-    #gate {
-      background: white;
-      display: inline-block;
-      padding: 1em;
-      font-family: Helvetica Neue;
+    &:before {
+      animation: sparkle 4s infinite linear;
+      background: linear-gradient(
+      90deg,
+      $c1 0%,
+      $c2 11%,
+      $c3 22%,
+      $c1 33%,
+      $c2 44%,
+      $c3 55%,
+      $c1 66%,
+      $c2 77%,
+      $c3 88%,
+      $c1 100%
+      );
+      background-size: 300% 100%;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 40px;
+      margin-block-start: -5px;
       border-radius: 4px;
-      position: relative;
-      &:before {
-        animation: sparkle 4s infinite linear;
-        background: linear-gradient(
-        90deg,
-        $c1 0%,
-        $c2 11%,
-        $c3 22%,
-        $c1 33%,
-        $c2 44%,
-        $c3 55%,
-        $c1 66%,
-        $c2 77%,
-        $c3 88%,
-        $c1 100%
-        );
-        background-size: 300% 100%;
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
-        filter: blur(3px);
-        z-index: -1;
-        transform: scale(0.99) translateY(3px);
-      }
+      filter: blur(3px);
+      z-index: -1;
+      transform: scale(0.99) translateY(3px);
     }
+  }

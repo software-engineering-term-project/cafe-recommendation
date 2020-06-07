@@ -8,13 +8,23 @@
       rel="stylesheet"
       type="text/css"
       href="{% static 'cafeyo/styles_cafe_list.css' %}"
+     
+    />
+    <link
+      rel="stylesheet"
+      type="text/scss"
       href="{% static 'cafeyo/styles_cafe_list.scss' %}"
-      href="{% static 'cafeyo/styles_cafe_list.js' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'cafeyo/styles_cafe_list.css.map' %}"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
+    
   </head>
 
     <body>
@@ -31,7 +41,6 @@
                     <li><a href="#">Take-out</a></li>
                     <li><a href="#">Bakery</a></li>
                   </ul>
-
       </div>
         
       <div class="right-top">
@@ -47,13 +56,14 @@
 
       <div class="right-bottom">
         <div class="cafe-container">
-          <div class="cafe">
+          <div class="reco-cafe">
             <a href="{% url 'cafeyo:results' random_cafe.id %}">
               <div class ="image">
                 <img src="{% static random_cafe.cafe_path %}" width="250" height="200">
               </div>
                 <div class ="information">
-                <h3>{{ random_cafe.카페명 }}</h3>
+                <div id ="reco-deco" style="z-index: 3;">(추천)
+                {{ random_cafe.카페명 }}</div>
                 <!-- <h6>전화번호: {{ random_cafe.전화번호 }}</h6>
                 <h6>주소: {{ random_cafe.주소 }}</h6> -->
                 <h6>영업시간: {{ random_cafe.영업시간 }}</h6>

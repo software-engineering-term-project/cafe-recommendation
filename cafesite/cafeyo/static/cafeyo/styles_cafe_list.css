@@ -6,21 +6,25 @@
   src: url("fonts/HoonMakdaeyunpilR.ttf");
   font-family: "pencil";
 }
+@font-face{
+  src: url("fonts/Dacncing_Script/DancingScript-VariableFont_wght.ttf");
+  font-family: "dancing";
+}
 * {
   box-sizing: border-box;
 }
 body{
-	margin: 0;
+   margin: 0;
   min-width: 992px;
   background-color: #7A5B45;
 }
 .back{
-	height: 900px;
-	background-image: url("images/background_3.png");
-	background-repeat: no-repeat;
-	background-size: cover; 
+   height: 900px;
+   background-image: url("images/background_3.png");
+   background-repeat: no-repeat;
+   background-size: cover; 
   background-position: top;
-  z-index:2;
+  
 }
 .side_nav{
   height: 100%;
@@ -216,3 +220,110 @@ ul#menu, ul#menu ul{
   margin-inline-start: 5px;
   margin-inline-end: 0px;
 }
+
+
+
+
+
+
+
+
+.reco-cafe{
+  float: left;
+  background-color: rgba( 255, 255, 255, 0.3 );
+  width: 500px;
+  height:  200px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  overflow: none;
+  border-radius: 10px; 
+  z-index: 1;
+}
+.reco-cafe a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
+/* #reco-cafe{
+  font-size: 20px;
+  font-weight: normal;
+  margin-block-start: 20px;
+  margin-block-end: 0;
+  margin-inline-start: 5px;
+  margin-inline-end: 0px;
+
+} */
+/* .reco-cafe h3{
+  font-size:30px;
+  font-weight: bold;
+  margin-block-start: 5px;
+  margin-block-end: 20px;
+  margin-inline-start: 5px;
+  margin-inline-end: 0px;
+} */
+@-webkit-keyframes sparkle {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 200% 100%;
+  }
+}
+
+@keyframes sparkle {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 200% 100%;
+  }
+}
+
+@font-face {
+  src: url("fonts/Dacncing_Script/DancingScript-VariableFont_wght.ttf");
+  font-family: "dancing";
+}
+
+#reco-deco {
+  background-color: none;
+  display: inline-block;
+  border-radius: 4px;
+  position: relative;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  -webkit-margin-before: 45px;
+          margin-block-start: 45px;
+  -webkit-margin-after: 20px;
+          margin-block-end: 20px;
+  -webkit-margin-start: 5px;
+          margin-inline-start: 5px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+
+#reco-deco:before {
+  -webkit-animation: sparkle 4s infinite linear;
+          animation: sparkle 4s infinite linear;
+  background: -webkit-gradient(linear, left top, right top, from(#7FEFBD), color-stop(11%, #FFF689), color-stop(22%, #EC0B43), color-stop(33%, #7FEFBD), color-stop(44%, #FFF689), color-stop(55%, #EC0B43), color-stop(66%, #7FEFBD), color-stop(77%, #FFF689), color-stop(88%, #EC0B43), to(#7FEFBD));
+  background: linear-gradient(90deg, #7FEFBD 0%, #FFF689 11%, #EC0B43 22%, #7FEFBD 33%, #FFF689 44%, #EC0B43 55%, #7FEFBD 66%, #FFF689 77%, #EC0B43 88%, #7FEFBD 100%);
+  background-size: 300% 100%;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  -webkit-margin-before: 0px;
+          margin-block-start: -5px;
+  border-radius: 4px;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  z-index: -1;
+  -webkit-transform: scale(0.99) translateY(3px);
+          transform: scale(0.99) translateY(3px);
+}
+/*# sourceMappingURL=styles_cafe_list.css.map */
