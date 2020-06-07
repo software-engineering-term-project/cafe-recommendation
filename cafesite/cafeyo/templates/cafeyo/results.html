@@ -10,6 +10,9 @@
       type="text/css"
       href="{% static 'cafeyo/styles_results.css' %}"
     />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   </head>
 
   <body>
@@ -55,12 +58,14 @@
           function btn(){ 
             var x = "{{ cafein_menu.이름 }}";
             var y = "{{ decafein_menu.이름 }}";
-            var z = "카페인 메뉴 : "+ x+" , 디카페인 메뉴 : "+y;
-           
-            alert(z); 
+            var z = "카페인 메뉴 : " + x;
+            var w = "디카페인 메뉴 : " + y;
+            swal(z, w); 
 
           } 
         </script>
+
+
 
       </div>
     

@@ -13,6 +13,22 @@ body{
   	font-family: "Tree";
 }
 
+
+.swal-title{
+  padding-top: 40px;
+  
+
+  font-size: 30px;
+  font-weight: bold;
+}
+.swal-text{
+  margin-bottom: 20px;
+  
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .back{
   height: 350px;
 
