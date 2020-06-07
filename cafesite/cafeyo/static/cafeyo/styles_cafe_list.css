@@ -167,7 +167,7 @@ ul#menu, ul#menu ul{
 
 .cafe{
   float: left;
-  background-color: rgba( 255, 255, 255, 0.3 );
+  background-color: rgba( 255, 255, 255, 0.4 );
   width: 500px;
   height:  200px;
   margin-right: 25px;
@@ -230,7 +230,7 @@ ul#menu, ul#menu ul{
 
 .reco-cafe{
   float: left;
-  background-color: rgba( 255, 255, 255, 0.3 );
+  background-color: rgba( 255, 255, 255, 0.4 );
   width: 500px;
   height:  200px;
   margin-right: 25px;
