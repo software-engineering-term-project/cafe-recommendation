@@ -73,7 +73,12 @@
             var z = "카페인 메뉴 : " + x;
             var w = "디카페인 메뉴 : " + y;
 
-            swal(z, w);
+           
+            swal(z, w) 
+            .then((value) => {
+              location.reload();
+});
+
           }
 
         </script>
