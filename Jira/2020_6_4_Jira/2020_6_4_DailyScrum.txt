@@ -1,0 +1,12 @@
+어제 한 일
+이채현 : kakao map api 칸 만들기
+김경주 : category와 logo 위치 재조정
+배홍직 : index map 그림 다시따서 path 연결하기
+이현준 : 서버에서 url불러와서 사용하는 방법 알려주기
+
+
+오늘 할 일
+이채현 : result 디자인 연구
+김경주 : cafelist 디자인 연구
+배홍직 : index map 효과 계속 수정하고 피드백 받기
+이현준 : db와 admin 정리해서 연동하기
