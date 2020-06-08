@@ -35,19 +35,28 @@
            <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200">
          </a>
           <ul id="gate">
-            <li><a href="#">Study</a></li>
-            <li><a href="#">Franchise</a></li>
-            <li><a href="#">24h</a></li>
-            <li><a href="#">Take-out</a></li>
-            <li><a href="#">Dessert</a></li>
+            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=1 %}">Study</a></li>
+            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=2 %}">Franchise</a></li>
+            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=3 %}">24h</a></li>
+            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=4 %}">Take-out</a></li>
+            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=5 %}">Dessert</a></li>
         </ul>
       </div>
 
       <div class= "hero-header"></div>
        <div>
       <div class="right-bottom">
+        {% if id_param == 1 %}
         <h2>북문 cafes</h2>
+        {% elif id_param == 2 %}
+        <h2>동문 cafes</h2>
+        {% elif id_param == 3 %}
+        <h2>정문 cafes</h2>
+        {% elif id_param == 4 %}
+        <h2>쪽문 cafes</h2>
+        {% endif %}
         <div class="cafe-container">
+          {% if random_cafe %}
           <div class="reco-cafe">
             <a href="{% url 'cafeyo:results' random_cafe.id %}">
               <div class ="image">
@@ -56,13 +65,12 @@
                 <div class ="information">
                 <div id ="reco-deco" style="z-index: 3;">(추천)
                 {{ random_cafe.카페명 }}</div>
-                <!-- <h6>전화번호: {{ random_cafe.전화번호 }}</h6>
-                <h6>주소: {{ random_cafe.주소 }}</h6> -->
                 <h6>영업시간 : {{ random_cafe.영업시간 }}</h6>
                 <h6>카테고리 : {{ random_cafe.카테고리 }}</h6>
               </div>
               </a>
             </div>
+          {% endif %}
         {% for cafe in cafe_list %}
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
