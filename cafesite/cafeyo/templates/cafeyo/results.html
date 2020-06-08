@@ -12,162 +12,153 @@
     />
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
   </head>
 
   <body>
     <div class="navbar">
-        <a href="{% url 'cafeyo:index' %}" id="logo">
-           <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200">
-
-         </a>
-          <ul id="gate">
-            <li><a href="#">Study</a></li>
-            <li><a href="#">Franchise</a></li>
-            <li><a href="#">24h</a></li>
-            <li><a href="#">Take-out</a></li>
-            <li><a href="#">Bakery</a></li>
-        </ul>
-      </div>
-
-    <div class="back">
-
-     <!-- <a href="{% url 'cafeyo:index' %}" class="logo">
-        <img src="{% static 'cafeyo/images/logo_6.png' %}" width="500">
-     </a> -->
-    
-      
-     
-
+      <a href="{% url 'cafeyo:index' %}" id="logo">
+        <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200" />
+      </a>
+      <ul id="gate">
+        <li>
+          <a
+            href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=1 %}"
+            >Study</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=2 %}"
+            >Franchise</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=3 %}"
+            >24h</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=4 %}"
+            >Take-out</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=5 %}"
+            >Dessert</a
+          >
+        </li>
+      </ul>
     </div>
 
-  <div class="container">
+    <div class="back">
+      <!-- <a href="{% url 'cafeyo:index' %}" class="logo">
+        <img src="{% static 'cafeyo/images/logo_6.png' %}" width="500">
+     </a> -->
+    </div>
 
-    {% csrf_token %}
-     <div class="random">
-
-      
-
+    <div class="container">
+      {% csrf_token %}
+      <div class="random">
         <button class="buttons" onclick="javascript:btn()">
-          <img src="{% static 'cafeyo/images/random_2.png' %}" width="130" >
-
+          <img src="{% static 'cafeyo/images/random_2.png' %}" width="130" />
         </button>
 
-       
-        <script> 
-          function btn(){ 
+        <script>
+          function btn() {
             var x = "{{ cafein_menu.이름 }}";
             var y = "{{ decafein_menu.이름 }}";
             var z = "카페인 메뉴 : " + x;
             var w = "디카페인 메뉴 : " + y;
-            swal(z, w) 
-            .then((value) => {
-              location.reload();
-});
 
-          } 
+            swal(z, w);
+          }
+
         </script>
-
-
-
-      </div>
-    
-
-    {% csrf_token %}
-
-    
-    <div class="cafe">
-      <img src="{% static cafe.cafe_path %}" width="400" >
-      <h3>{{ cafe.카페명 }}</h3>
-      <div class="result_cafe">
-        
-        <h6>전화번호 : {{ cafe.전화번호 }}</h6>
-        <h6>주소 : {{ cafe.주소 }}</h6>
-        <h6>영업시간 : {{ cafe.영업시간 }}</h6>
-        <h6>카테고리 : {{ cafe.카테고리 }}</h6>
       </div>
 
-      <div class="result_menu">
-        <ul>
-          {% for menu in cafe.menu_set.all %}
-          <li>
-            <h6>{{ menu.이름 }}</h6>
-          </li>
-          {% endfor %}
-        </ul>
+      {% csrf_token %}
+
+      <div class="cafe">
+        <img src="{% static cafe.cafe_path %}" width="400" />
+        <h3>{{ cafe.카페명 }}</h3>
+        <div class="result_cafe">
+          <h6>전화번호 : {{ cafe.전화번호 }}</h6>
+          <h6>주소 : {{ cafe.주소 }}</h6>
+          <h6>영업시간 : {{ cafe.영업시간 }}</h6>
+          <h6>카테고리 : {{ cafe.카테고리 }}</h6>
+        </div>
+
+        <div class="result_menu">
+          <ul>
+            {% for menu in cafe.menu_set.all %}
+            <li>
+              <h6>{{ menu.이름 }}</h6>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
-  </div>
+      <div class="map">
+        <div id="map" style="width: 750px; height: 800px;"></div>
+        <script
+          type="text/javascript"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c16bd19938b4633ddd50051490e3c02&libraries=services"
+        ></script>
+        <script>
+          var mapContainer = document.getElementById("map"),
+            mapOption = {
+              center: new kakao.maps.LatLng(35.888928, 128.610327),
+              level: 3,
+            };
 
+          var map = new kakao.maps.Map(mapContainer, mapOption);
 
-  <div class="map">
-              <div id="map" style="width: 750px; height: 800px;"></div>
-          <script
-            type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c16bd19938b4633ddd50051490e3c02&libraries=services"
-          ></script>
-          <script>
-            var mapContainer = document.getElementById("map"),
-              mapOption = {
-                center: new kakao.maps.LatLng(35.888928, 128.610327),
-                level: 3,
-              };
+          var geocoder = new kakao.maps.services.Geocoder();
 
-            var map = new kakao.maps.Map(mapContainer, mapOption);
+          geocoder.addressSearch("{{ cafe.주소 }}", function (result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+              var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-            var geocoder = new kakao.maps.services.Geocoder();
+              var marker = new kakao.maps.Marker({
+                map: map,
+                position: coords,
+              });
 
-            geocoder.addressSearch("{{ cafe.주소 }}", function (
-              result,
-              status
-            ) {
-              if (status === kakao.maps.services.Status.OK) {
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+              var infowindow = new kakao.maps.InfoWindow({
+                content:
+                  '<div style="width:150px;text-align:center;padding:6px 0;">{{ cafe.카페명 }}</div>',
+              });
+              infowindow.open(map, marker);
 
-                var marker = new kakao.maps.Marker({
-                  map: map,
-                  position: coords,
-                });
+              map.setCenter(coords);
+            }
+          });
+        </script>
+      </div>
+    </div>
 
-                var infowindow = new kakao.maps.InfoWindow({
-                  content:
-                    '<div style="width:150px;text-align:center;padding:6px 0;">{{ cafe.카페명 }}</div>',
-                });
-                infowindow.open(map, marker);
-
-                map.setCenter(coords);
-              }
-            });
-          </script>
-
-  </div> 
-
-  </div>
- 
-
-
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script>
-  jQuery(function($) {
-    $("body").css("display", "none");
-    $("body").fadeIn(2200);
-    $("a.transition").click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(1000, redirectPage);
-    });
-    function redirectPage() {
-    window.location = linkLocation;
-    }
-    });</script>
-
-
-  
-
-
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      jQuery(function ($) {
+        $("body").css("display", "none");
+        $("body").fadeIn(2200);
+        $("a.transition").click(function (event) {
+          event.preventDefault();
+          linkLocation = this.href;
+          $("body").fadeOut(1000, redirectPage);
+        });
+        function redirectPage() {
+          window.location = linkLocation;
+        }
+      });
+    </script>
   </body>
 </html>
