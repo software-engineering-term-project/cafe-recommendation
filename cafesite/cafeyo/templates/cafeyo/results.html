@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>SimpleShop</title>
     <meta charset="utf-8" />
+    
 
     {% load static %}
+
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'cafeyo/styles_results.css' %}"
     />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
@@ -20,6 +27,12 @@
         <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200" />
       </a>
       <ul id="gate">
+        <li>
+          <a id="all"
+            href="#"
+            >All</a
+          >
+        </li>
         <li>
           <a
             href="{% url 'cafeyo:cafelist_category' gate_id=cafe.문.id category_id=1 %}"
@@ -50,6 +63,18 @@
             >Dessert</a
           >
         </li>
+        <li>
+          <div class="dropdown">
+          <a href="#" class="dropbtn">Gate</a>
+          <div class="dropdown-content">
+            <a href="{% url 'cafeyo:cafelist' gate_id=1 %}">북문</a>
+            <a href="{% url 'cafeyo:cafelist' gate_id=3 %}">동문</a>
+            <a href="{% url 'cafeyo:cafelist' gate_id=4 %}">쪽문</a>
+            <a href="{% url 'cafeyo:cafelist' gate_id=2 %}">정문</a>
+          </div>
+        </div>
+        </li>
+
       </ul>
     </div>
 
@@ -146,7 +171,7 @@
       </div>
     </div>
 
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"
@@ -164,6 +189,6 @@
           window.location = linkLocation;
         }
       });
-    </script>
+    </script> -->
   </body>
 </html>
