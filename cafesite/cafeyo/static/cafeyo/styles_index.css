@@ -6,8 +6,8 @@
 */
 
 .navbar {
-    margin-top: 200px;
-    height: 900px;
+    margin-top: 150px;
+    height: 950px;
     background-image: url("images/background_5.png");
 	background-repeat: no-repeat;
 	background-size: cover; 
@@ -106,6 +106,10 @@ body{
 .container .map.east path{
     stroke-dasharray: 137;
     stroke-dashoffset: 0;
+
+}
+.oval-speech :hover{
+    animation: animate-east 0.5s linear forwards;
 }
 .container .map.east:hover path{
     animation: animate-east 0.5s linear forwards;
@@ -165,7 +169,8 @@ body{
     100%
     {
 		stroke-dashoffset: 368;
-		transform: translateX(10px) translateY(10px);
+        transform: translateX(10px) translateY(10px);
+        fill: #dfe4ea;
     }
 }
 
