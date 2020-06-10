@@ -225,21 +225,21 @@ body{
 }
 
 .gateimg.S{
-    top: 250px;
-    right: 170px;
+    top: 270px;
+    right: 230px;
 }
 
 .gateimg.E{
-    right: -100px;
-    top: 150px;
+    right: -155px;
+    top: 120px;
 }
 
 .gateimg.M{
-    right: 110px;
-    top: 310px;
+    right: 0px;
+    top: 340px;
 }
 
 .gateimg.N{
-    top: 60px;
-    right: 220px;
+    top: 40px;
+    right: 250px;
 }
