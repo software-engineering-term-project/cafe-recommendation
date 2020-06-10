@@ -19,8 +19,8 @@
 }
 
 .hero-header{
-  height: 400px;
-  background-image: url("images/back_2.png");
+  height: 430px;
+  background-image: url("images/back_3.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -91,7 +91,7 @@ body{
   
 }
 
-.dropdown-content a:hover {background-color: rgba(255,255,255,0.4); border-radius: 15px;}
+/*.dropdown-content a:hover {background-color: rgba(255,255,255,0.4); border-radius: 15px;}*/
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -160,7 +160,7 @@ body{
 }
 #gate li a:hover:not(.active){
   font-weight: bold;
-  font-size: 36px;
+  /*font-size: 36px;*/
  /* text-shadow: 1px 2px 2px #5D6D7E;*/
   line-height: 40px;
   color: rgba(0,0,0,0.8);
