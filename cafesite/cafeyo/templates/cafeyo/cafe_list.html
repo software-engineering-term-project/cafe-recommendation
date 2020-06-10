@@ -35,8 +35,7 @@
            <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200">
          </a>
           <ul id="gate">
-            <li><a id="all" href="#">
-            All</a></li>
+            <li><a id="all" href="{% url 'cafeyo:cafelist' gate_id=id_param %}"> All</a></li>
             <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=1 %}">Study</a></li>
             <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=2 %}">Franchise</a></li>
             <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=3 %}">24h</a></li>
@@ -62,9 +61,9 @@
         {% if id_param == 1 %}
         <h2>북문 cafes</h2>
         {% elif id_param == 2 %}
-        <h2>동문 cafes</h2>
-        {% elif id_param == 3 %}
         <h2>정문 cafes</h2>
+        {% elif id_param == 3 %}
+        <h2>동문 cafes</h2>
         {% elif id_param == 4 %}
         <h2>쪽문 cafes</h2>
         {% endif %}
