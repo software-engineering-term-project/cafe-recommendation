@@ -42,6 +42,10 @@ body{
     -webkit-transition-duration: .5s;
 }
 
+.logo img{
+    width: 700px;
+}
+
 .container {
     position: relative;
     width: 800px;
@@ -213,3 +217,29 @@ body{
     }
 }
 
+.gateimg {
+    position: absolute;
+}
+.gateimg img{
+    width: 170px;
+}
+
+.gateimg.S{
+    top: 250px;
+    right: 170px;
+}
+
+.gateimg.E{
+    right: -100px;
+    top: 150px;
+}
+
+.gateimg.M{
+    right: 110px;
+    top: 310px;
+}
+
+.gateimg.N{
+    top: 60px;
+    right: 220px;
+}
