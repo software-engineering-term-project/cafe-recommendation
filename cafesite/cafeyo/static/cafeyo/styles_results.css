@@ -18,6 +18,29 @@ body{
 }
 
 
+
+
+
+
+
+
+.cafe::-webkit-scrollbar {
+    width: 15px;
+    
+
+  }
+  .cafe::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 10px;
+  }
+  .cafe::-webkit-scrollbar-track {
+    background-color: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
 .swal-title{
   padding-top: 40px;
   
@@ -34,9 +57,9 @@ body{
 }
 
 .back{
-  height: 400px;
+  height: 430px;
 
-  background-image: url("images/back_2.png");
+  background-image: url("images/back_3.png");
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center center;
@@ -124,7 +147,7 @@ h1{
   
 }
 
-.dropdown-content a:hover {background-color: rgba(255,255,255,0.4); border-radius: 15px;}
+/*.dropdown-content a:hover {background-color: rgba(255,255,255,0.3); border-radius: 15px;}*/
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -198,7 +221,7 @@ h1{
 }
 #gate li a:hover:not(.active){
   font-weight: bold;
-  font-size: 36px;
+  /*font-size: 36px;*/
  /* text-shadow: 1px 2px 2px #5D6D7E;*/
   line-height: 40px;
   color: rgba(0,0,0,0.8);

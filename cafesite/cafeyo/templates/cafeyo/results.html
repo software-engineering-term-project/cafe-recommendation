@@ -23,12 +23,15 @@
     />
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+
   </head>
 
   <body>
     <div class="navbar">
       <a href="{% url 'cafeyo:index' %}" id="logo">
-        <img src="{% static 'cafeyo/images/logo_4.png' %}" width="200" />
+        <img src="{% static 'cafeyo/images/logo_4.png' %}" width="220" />
       </a>
       <ul id="gate">
         <li>
@@ -106,6 +109,19 @@
           }
         </script>
       </div>
+
+  
+
+
+     
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  
+
       <div class="cafe">
         <img src="{% static cafe.cafe_path %}" width="400" />
         <h3>{{ cafe.카페명 }}</h3>
@@ -126,6 +142,8 @@
           </ul>
         </div>
       </div>
+
+  
 
       <div class="map">
         <div id="map" style="width: 750px; height: 800px;"></div>
