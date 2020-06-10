@@ -79,6 +79,21 @@ body{
     animation: animate-north 0.5s linear forwards;
 }
 
+.container .map.north:hover .gateimg.N{
+    animation: animate-north-logo 0.5s linear forwards;
+}
+
+@keyframes animate-north-logo{
+    0%
+    {
+        transform: translateX(0) translateY(0);
+    }
+    100%
+    {
+        transform: translateX(-40px) translateY(-40px);
+    }
+}
+
 @keyframes animate-north {
     0%
     {
@@ -117,6 +132,21 @@ body{
 }
 .container .map.east:hover path{
     animation: animate-east 0.5s linear forwards;
+}
+
+.container .map.east:hover .gateimg.E{
+    animation: animate-east-logo 0.5s linear forwards;
+}
+
+@keyframes animate-east-logo{
+    0%
+    {
+        transform: translateX(0) translateY(0);
+    }
+    100%
+    {
+        transform: translateX(40px) translateY(-40px);
+    }
 }
 
 @keyframes animate-east {
@@ -206,6 +236,21 @@ body{
 }
 .container .map.side:hover path{
     animation: animate-side 0.5s linear forwards;
+}
+
+.container .map.side:hover .gateimg.S{
+    animation: animate-side-logo 0.5s linear forwards;
+}
+
+@keyframes animate-side-logo{
+    0%
+    {
+        transform: translateX(0) translateY(0);
+    }
+    100%
+    {
+        transform: translateX(-40px) translateY(40px);
+    }
 }
 
 @keyframes animate-side {
