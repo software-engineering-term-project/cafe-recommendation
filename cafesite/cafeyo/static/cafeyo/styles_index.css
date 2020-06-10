@@ -155,6 +155,21 @@ body{
     animation: animate-main 0.5s linear forwards;
 }
 
+.container .map.main:hover .gateimg.M{
+    animation: animate-main-logo 0.5s linear forwards;
+}
+
+@keyframes animate-main-logo{
+    0%
+    {
+        transform: translateX(0) translateY(0);
+    }
+    100%
+    {
+        transform: translateX(40px) translateY(40px);
+    }
+}
+
 @keyframes animate-main {
     0%
     {
