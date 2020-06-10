@@ -1,0 +1,11 @@
+어제 한 일
+김경주 : 하루 휴식
+배홍직 : index 디자인 연구
+이채현 : category all 추가, category에 gate 추가
+이현준 : DB 작성 끝
+
+오늘 할 일
+김경주 : 발표 ppt 조금씩 작성
+배홍직 : index 디자인 연구
+이채현 : result 페이지 scroll 디자인 변경
+이현준 : ppt 자료 준비
