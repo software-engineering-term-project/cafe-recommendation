@@ -33,13 +33,15 @@ body{
 }
 
 .logo{ 
-
-	line-height: 60px;
-	vertical-align: middle;
+    position: absolute;
+	line-height: 160px;
+	/* vertical-align: middle; */
     margin-left: 50px;
     opacity: 0;
     transition-duration: 0.5s;
     -webkit-transition-duration: .5s;
+    top: 670px;
+    right: 1500px;
 }
 
 .logo img{
