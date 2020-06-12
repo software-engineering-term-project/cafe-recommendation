@@ -308,16 +308,17 @@ body{
 
 
 .col-sm-12.col-md-6{
-    padding-right: 50px;
+    padding-right: 200px;
 }
 .site-footer
 {
 height: 347px;
   background-color:#26272b;
-  padding:45px 100px 45px 100px;
+  padding:45px 150px 45px 150px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+  
 }
 .site-footer hr
 {
