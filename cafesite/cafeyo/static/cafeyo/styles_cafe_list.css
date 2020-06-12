@@ -458,36 +458,12 @@ ul#menu, ul#menu ul{
 /*# sourceMappingURL=styles_cafe_list.css.map */
 
 
-
-
-
-* {
-box-sizing: border-box;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-}
-html {
-height: 100%;
-}
-body {
-margin: 0;
-height: 100%;
-}
 .cafe-container{
- 
-  padding-bottom: 347px; /* footer height */
-}
-.site-footer{
-  position: absolute; 
-  bottom: 0;
+  height: 100%;
+
+  overflow: auto;
 
 }
-.wrap{
-   min-height: 100%;
-   position: relative;
-}
-
-
 
 
 
@@ -502,12 +478,6 @@ height: 100%;
   font-size:15px;
   line-height:24px;
   color:#737373;
-
- /* margin-top: 1000%;*/
-
-
-
-  
 }
 .site-footer hr
 {
