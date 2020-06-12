@@ -459,6 +459,38 @@ ul#menu, ul#menu ul{
 
 
 
+
+
+* {
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+html {
+height: 100%;
+}
+body {
+margin: 0;
+height: 100%;
+}
+.cafe-container{
+ 
+  padding-bottom: 347px; /* footer height */
+}
+.site-footer{
+  position: absolute; 
+  bottom: 0;
+
+}
+.wrap{
+   min-height: 100%;
+   position: relative;
+}
+
+
+
+
+
 .col-sm-12.col-md-6{
     padding-right: 50px;
 }
