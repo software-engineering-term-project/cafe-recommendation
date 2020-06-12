@@ -41,12 +41,12 @@ body{
     opacity: 0;
     transition-duration: 0.5s;
     -webkit-transition-duration: .5s;
-    top: 600px;
+    top: 650px;
     right: 1600px;
 }
 
 .logo img{
-    width: 800px;
+    width: 600px;
 }
 
 .container {
