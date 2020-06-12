@@ -36,13 +36,15 @@ body{
 .logo{ 
     position: absolute;
 	line-height: 160px;
-	/* vertical-align: middle; */
-    margin-left: 50px;
+  /* vertical-align: middle; */
+    margin-top: 300px;
+    margin-left: 280px;
     opacity: 0;
     transition-duration: 0.5s;
     -webkit-transition-duration: .5s;
-    top: 650px;
-    right: 1600px;
+    /* top: 650px;
+    right: 1600px; */
+    
 }
 
 .logo img{
