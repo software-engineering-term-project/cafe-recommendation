@@ -340,16 +340,51 @@ h1{
   overflow: auto;
 }
 .col-sm-12.col-md-6{
-    padding-right: 50px;
+    float: left;
+    width: 800px;
+    height:  250px;
+    margin-right: 400px;
+    padding-bottom: 30px;
+
 }
+.col-xs-6.col-md-3{
+  float: left;
+  width: 500px;
+  height: 250px;
+  margin-right: 100px;
+}
+
+.col-xs-6.col-md-3 a{
+text-decoration: none;
+}
+
+.row{
+  width:2400px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+.copyright-text{
+  float: left;
+  border-top: 0.05px solid #bbb;
+  padding-top: 20px;
+  width: 2000px;
+  margin-top: 30px;
+ 
+}
+
+
+
+
 .site-footer
 {
-  height: 347px;
+  height: 360px;
   background-color:#26272b;
   padding:45px 100px 45px 100px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+  width: 100%;
 }
 .site-footer hr
 {
