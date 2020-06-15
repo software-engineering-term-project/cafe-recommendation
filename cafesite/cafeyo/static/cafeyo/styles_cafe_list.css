@@ -276,6 +276,34 @@ ul#menu, ul#menu ul{
 
 } */
 
+
+
+.no-cafes{
+  float: center;
+  background-color: rgba( 93,109,126, 0.2 );
+  width: 700px;
+  height:  300px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Pho";
+
+
+  margin-top: 100px;
+  margin-bottom: 150px;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+  overflow: none;
+  border-radius: 30px; 
+}
+
+
+
+
 .cafe{
   float: left;
   background-color: rgba( 93,109,126, 0.2 );

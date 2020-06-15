@@ -35,7 +35,7 @@
     <body>    
 
 
-       <div class="wrap">
+     
       
       <div class="navbar">
         <a href="{% url 'cafeyo:index' %}" id="logo">
@@ -76,6 +76,8 @@
         {% elif id_param == 4 %}
         <h2>쪽문 cafes</h2>
         {% endif %}
+
+        {% if cafe_list %}
         <div class="cafe-container">
           {% if random_cafe %}
           <div class="reco-cafe">
@@ -106,9 +108,18 @@
             </a>
           </div>
         {% endfor %}
+      
+
+      {% else %}
+      <div class="no-cafes">
+        <p>선택하신 카테고리에 해당하는 </p>
+        <p>카페가 존재하지 않습니다.</p>
+      </div>
+
+      {% endif %}
         </div>
       </div>
-    </div>
+   
    
 
 
