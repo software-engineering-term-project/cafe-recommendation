@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xml:lang>
   <head>
     <title>SimpleShop</title>
     <meta charset="utf-8" />
@@ -35,7 +35,7 @@
   <body>
     <div class="navbar">
       <a href="{% url 'cafeyo:index' %}" id="logo">
-        <img src="{% static 'cafeyo/images/logo_4.png' %}" width="220" />
+        <img src="{% static 'cafeyo/images/logo_4.png' %}" alt="카페 로고" width="220" />
       </a>
       <ul id="gate">
         <li>
@@ -88,16 +88,12 @@
     </div>
 
     <div class="back">
-      <!-- <a href="{% url 'cafeyo:index' %}" class="logo">
-        <img src="{% static 'cafeyo/images/logo_6.png' %}" width="500">
-     </a> -->
     </div>
-
     <div class="container">
       {% csrf_token %}
       <div class="random">
         <button class="buttons" onclick="javascript:btn()">
-          <img src="{% static 'cafeyo/images/random_2.png' %}" width="130" />
+          <img src="{% static 'cafeyo/images/random_2.png' %}" alt="버튼" width="130" />
         </button>
 
         <script>
@@ -127,7 +123,7 @@
   
 
       <div class="cafe">
-        <img src="{% static cafe.cafe_path %}" width="400" />
+        <img src="{% static cafe.cafe_path %}" alt="카페 이미지" width="400" />
         <h3>{{ cafe.카페명 }}</h3>
         <div class="result_cafe">
           <h6>전화번호 : {{ cafe.전화번호 }}</h6>

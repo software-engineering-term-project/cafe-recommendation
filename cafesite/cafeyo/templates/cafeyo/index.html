@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xml:lang>
   <head>
     <title>SimpleShop</title>
     <meta charset="utf-8" />
@@ -50,12 +50,12 @@
 
   <body>
     <div class="navbar">
-      <a href="{% url 'cafeyo:index' %}" class="logo" style="opacity: 1;">
-        <img src="{% static 'cafeyo/images/logo_7.png' %}" width="300" />
+      <a href="{% url 'cafeyo:index' %}" class="logo"  style="opacity: 1;">
+        <img src="{% static 'cafeyo/images/logo_7.png' %}" alt="카페 로고" width="300" />
       </a>
       <div class="container">
         <div class="map north">
-          <div class="gateimg N"><img src="{% static 'cafeyo/images/Gate/black/N.png' %}"></div>
+          <div class="gateimg N"><img src="{% static 'cafeyo/images/Gate/black/N.png' %}" alt="북문" ></div>
           <svg
             width="129.43mm"
             height="76.078mm"
@@ -109,7 +109,7 @@
         </div>
 
         <div class="map main">
-          <div class="gateimg M"><img src="{% static 'cafeyo/images/Gate/black/S.png' %}"></div>
+          <div class="gateimg M"><img src="{% static 'cafeyo/images/Gate/black/S.png' %}" alt="정문"></div>
           <svg
             width="72.148mm"
             height="90.083mm"
@@ -148,7 +148,7 @@
         </div>
 
         <div class="map side">
-          <div class="gateimg S"><img src="{% static 'cafeyo/images/Gate/black/W.png' %}"></div>
+          <div class="gateimg S"><img src="{% static 'cafeyo/images/Gate/black/W.png' %}" alt="쪽문"></div>
           <svg
             width="118.2mm"
             height="78.163mm"
@@ -199,7 +199,7 @@
         </div>
 
         <div class="map east">
-          <div class="gateimg E"><img src="{% static 'cafeyo/images/Gate/black/E.png' %}"></div>
+          <div class="gateimg E"><img src="{% static 'cafeyo/images/Gate/black/E.png' %}" alt="동문"></div>
           <svg
             width="55.858mm"
             height="70.76mm"

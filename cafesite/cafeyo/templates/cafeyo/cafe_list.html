@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xml:lang>
   <head>
     <title>SimpleShop</title>
     <meta charset="utf-8" />
@@ -39,7 +39,7 @@
       
       <div class="navbar">
         <a href="{% url 'cafeyo:index' %}" id="logo">
-           <img src="{% static 'cafeyo/images/logo_4.png' %}" width="220">
+           <img src="{% static 'cafeyo/images/logo_4.png' %}" alt="카페 로고" width="220">
          </a>
           <ul id="gate">
             <li><a id="all" href="{% url 'cafeyo:cafelist' gate_id=id_param %}"> All</a></li>
@@ -81,7 +81,7 @@
           <div class="reco-cafe">
             <a href="{% url 'cafeyo:results' random_cafe.id %}">
               <div class ="image">
-                <img src="{% static random_cafe.cafe_path %}" width="250" height="200">
+                <img src="{% static random_cafe.cafe_path %}" alt="카페 이미지" width="250" height="200">
               </div>
                 <div class ="information">
                 <div id ="reco-deco" style="z-index: 3;">(추천)
@@ -96,30 +96,18 @@
         <div class="cafe">
           <a href="{% url 'cafeyo:results' cafe.id %}">
             <div class ="image">
-              <img src="{% static cafe.cafe_path %}" width="250" height="200">
+              <img src="{% static cafe.cafe_path %}" alt="카페 이미지" width="250" height="200">
             </div>
               <div class ="information">
                 <h3>{{ cafe.카페명 }}</h3>
-                <!-- <h6>전화번호: {{ cafe.전화번호 }}</h6>
-                <h6>주소: {{ cafe.주소 }}</h6> -->
                 <h6>영업시간: {{ cafe.영업시간 }}</h6>
                 <h6>카테고리: {{ cafe.카테고리 }}</h6>
               </div>
             </a>
           </div>
         {% endfor %}
-
-
-
-
         </div>
-
-
-
       </div>
-
-
-
     </div>
    
 
