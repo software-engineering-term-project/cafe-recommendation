@@ -2,10 +2,10 @@
 
 .navbar {
     /*margin-top: 150px;*/
-  height: 945px;
+  height: 900px;
   background-image: url("images/background_5.png");
-	background-repeat: no-repeat;
-	background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover; 
   background-position: center center; 
   padding: 0;
 }
