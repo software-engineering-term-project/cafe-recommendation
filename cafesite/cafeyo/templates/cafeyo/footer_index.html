@@ -1,43 +1,49 @@
-
-
-      <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="cont">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">The number of cafes near Kyungpook National University has increased significantly due to the increasing number of students visiting cafes for everyday and academic reasons. I wanted to make a program that makes it easier for individuals to find cafes for their own purposes.</p>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
-            <ul class="footer-links">
-              <li>bukmun</li>
-              <li>dongmun</li>
-              <li>jeongmun</li>
-              <li>jjokmun</li>
-            </ul>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Contact Us</h6>
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">GITHUB</a></li>
-              <li>Tel: 053 950 7955</li>
-              <li>Email: 배리다@knu.ac.kr</li>
-            </ul>
-          </div>
-        </div>
-        <hr>
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="cont">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">
+          The number of cafes near Kyungpook National University has increased
+          significantly due to the increasing number of students visiting cafes
+          for everyday and academic reasons. I wanted to make a program that
+          makes it easier for individuals to find cafes for their own purposes.
+        </p>
       </div>
-      <div class="cont">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; Kyungpook National University 
-            </p>
-          </div>
-        </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <a href="{% url 'cafeyo:cafelist' gate_id=1 %}"><li>bukmun</li></a>
+          <a href="{% url 'cafeyo:cafelist' gate_id=3 %}"><li>dongmun</li></a>
+          <a href="{% url 'cafeyo:cafelist' gate_id=2 %}"><li>jeongmun</li></a>
+          <a href="{% url 'cafeyo:cafelist' gate_id=4 %}"><li>jjokmun</li></a>
+        </ul>
       </div>
-    </footer>
 
-
+      <div class="col-xs-6 col-md-3">
+        <h6>Contact Us</h6>
+        <ul class="footer-links">
+          <li>
+            <a
+              href="https://github.com/software-engineering-term-project/cafe-recommendation"
+              >GITHUB</a
+            >
+          </li>
+          <li>Email: bhj8551@knu.ac.kr</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+  </div>
+  <div class="cont">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">
+          Copyright &copy; Kyungpook National University
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

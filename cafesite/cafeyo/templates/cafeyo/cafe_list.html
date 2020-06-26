@@ -1,71 +1,97 @@
 <!DOCTYPE html>
-<html xml:lang>
-  <head>
-    <title>SimpleShop</title>
-    <meta charset="utf-8" />
+<html lang="ko">
+  <html xml:lang>
+    <head>
+      <title>CAFEYO</title>
+      <meta charset="utf-8" />
 
+      {% load static %}
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'cafeyo/styles_cafe_list.css' %}"
+      />
+      <link
+        rel="stylesheet"
+        type="text/scss"
+        href="{% static 'cafeyo/styles_cafe_list.scss' %}"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'cafeyo/styles_cafe_list.css.map' %}"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet"
+      />
+    </head>
 
-
-    {% load static %}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'cafeyo/styles_cafe_list.css' %}"
-     
-    />
-    <link
-      rel="stylesheet"
-      type="text/scss"
-      href="{% static 'cafeyo/styles_cafe_list.scss' %}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'cafeyo/styles_cafe_list.css.map' %}"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-
-    
-  </head>
-
-    <body>    
-
-
-     
-      
+    <body>
       <div class="navbar">
         <a href="{% url 'cafeyo:index' %}" id="logo">
-           <img src="{% static 'cafeyo/images/logo_4.png' %}" alt="카페 로고" width="220">
-         </a>
-          <ul id="gate">
-            <li><a id="all" href="{% url 'cafeyo:cafelist' gate_id=id_param %}"> All</a></li>
-            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=1 %}">Study</a></li>
-            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=2 %}">Franchise</a></li>
-            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=3 %}">24h</a></li>
-            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=4 %}">Take-out</a></li>
-            <li><a href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=5 %}">Dessert</a></li>
-            <li>
-          <div class="dropdown">
-          <a href="#" class="dropbtn">Gate</a>
-          <div class="dropdown-content">
-            <a href="{% url 'cafeyo:cafelist' gate_id=1 %}">북문</a>
-            <a href="{% url 'cafeyo:cafelist' gate_id=3 %}">동문</a>
-            <a href="{% url 'cafeyo:cafelist' gate_id=4 %}">쪽문</a>
-            <a href="{% url 'cafeyo:cafelist' gate_id=2 %}">정문</a>
-          </div>
-        </div>
-        </li>
+          <img
+            src="{% static 'cafeyo/images/logo_4.png' %}"
+            alt="카페 로고"
+            width="220"
+          />
+        </a>
+        <ul id="gate">
+          <li>
+            <a id="all" href="{% url 'cafeyo:cafelist' gate_id=id_param %}">
+              All</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=1 %}"
+              >Study</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=2 %}"
+              >Franchise</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=3 %}"
+              >24h</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=4 %}"
+              >Take-out</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'cafeyo:cafelist_category' gate_id=id_param category_id=5 %}"
+              >Dessert</a
+            >
+          </li>
+          <li>
+            <div class="dropdown">
+              <a href="#" class="dropbtn">Gate</a>
+              <div class="dropdown-content">
+                <a href="{% url 'cafeyo:cafelist' gate_id=1 %}">북문</a>
+                <a href="{% url 'cafeyo:cafelist' gate_id=3 %}">동문</a>
+                <a href="{% url 'cafeyo:cafelist' gate_id=4 %}">쪽문</a>
+                <a href="{% url 'cafeyo:cafelist' gate_id=2 %}">정문</a>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
 
-     
+      <div class="hero-header"></div>
 
-      <div class= "hero-header"></div>
-    
       <div class="right-bottom">
         {% if id_param == 1 %}
         <h2>북문 cafes</h2>
@@ -75,55 +101,67 @@
         <h2>동문 cafes</h2>
         {% elif id_param == 4 %}
         <h2>쪽문 cafes</h2>
-        {% endif %}
-
-        {% if cafe_list %}
+        {% endif %} {% if cafe_list %}
         <div class="cafe-container">
           {% if random_cafe %}
           <div class="reco-cafe">
             <a href="{% url 'cafeyo:results' random_cafe.id %}">
-              <div class ="image">
-                <img src="{% static random_cafe.cafe_path %}" alt="카페 이미지" width="250" height="200">
+              <div class="image">
+                <img
+                  src="{% static random_cafe.cafe_path %}"
+                  alt="카페 이미지"
+                  width="250"
+                  height="200"
+                />
               </div>
-                <div class ="information">
-                <div id ="reco-deco" style="z-index: 3;">(추천)
-                {{ random_cafe.카페명 }}</div>
+              <div class="information">
+                <div id="reco-deco" style="z-index: 3;">
+                  (추천) {{ random_cafe.카페명 }}
+                </div>
+                {% if random_cafe.영업시간 %}
                 <h6>영업시간 : {{ random_cafe.영업시간 }}</h6>
+                {% else %}
+                <h6>영업시간 : 업데이트 예정</h6>
+                {% endif %}
                 <h6>카테고리 : {{ random_cafe.카테고리 }}</h6>
               </div>
-              </a>
-            </div>
-          {% endif %}
-        {% for cafe in cafe_list %}
-        <div class="cafe">
-          <a href="{% url 'cafeyo:results' cafe.id %}">
-            <div class ="image">
-              <img src="{% static cafe.cafe_path %}" alt="카페 이미지" width="250" height="200">
-            </div>
-              <div class ="information">
+            </a>
+          </div>
+          {% endif %} {% for cafe in cafe_list %}
+          <div class="cafe">
+            <a href="{% url 'cafeyo:results' cafe.id %}">
+              <div class="image">
+                <img
+                  src="{% static cafe.cafe_path %}"
+                  alt="카페 이미지"
+                  width="250"
+                  height="200"
+                />
+              </div>
+              <div class="information">
                 <h3>{{ cafe.카페명 }}</h3>
-                <h6>영업시간: {{ cafe.영업시간 }}</h6>
+                {% if cafe.영업시간 %}
+                <h6>영업시간 : {{ cafe.영업시간 }}</h6>
+                {% else %}
+                <h6>영업시간 : 업데이트 예정</h6>
+                {% endif %}
                 <h6>카테고리: {{ cafe.카테고리 }}</h6>
               </div>
             </a>
           </div>
-        {% endfor %}
-      
+          {% endfor %} {% else %}
+          <div class="no-cafes">
+            <p>선택하신 카테고리에 해당하는</p>
+            <p>카페가 존재하지 않습니다.</p>
+          </div>
 
-      {% else %}
-      <div class="no-cafes">
-        <p>선택하신 카테고리에 해당하는 </p>
-        <p>카페가 존재하지 않습니다.</p>
-      </div>
-
-      {% endif %}
+          {% endif %}
         </div>
       </div>
-   
-   
 
       <div id="footers">
         {% include "cafeyo/footer.html" %}
       </div>
     </body>
+  </html>
 </html>
