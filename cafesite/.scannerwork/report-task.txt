@@ -2,5 +2,5 @@ projectKey=cafeyo
 serverUrl=http://localhost:9000/sonarqube
 serverVersion=8.3.1.34397
 dashboardUrl=http://localhost:9000/sonarqube/dashboard?id=cafeyo
-ceTaskId=AXK4HORerR7Ca4LERNIr
-ceTaskUrl=http://localhost:9000/sonarqube/api/ce/task?id=AXK4HORerR7Ca4LERNIr
+ceTaskId=AXK-J_AoZbLwSE1r73c9
+ceTaskUrl=http://localhost:9000/sonarqube/api/ce/task?id=AXK-J_AoZbLwSE1r73c9
